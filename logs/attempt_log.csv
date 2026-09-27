@@ -1,0 +1,27 @@
+step,time,txn,attempt,attempt_name,failure,exception,message,retryable,action,result
+1,19:28:35.413,T001,1,initial,-,-,-,-,record,SUCCESS
+2,19:28:35.413,T002,1,initial,Network,NetworkError,"T002 Process: connection reset, request did not reach the gateway",True,retry in 0.05 s,FAIL
+3,19:28:35.463,T002,2,retry 1,-,-,-,-,record,SUCCESS
+4,19:28:35.463,T003,1,initial,-,-,-,-,record,SUCCESS
+5,19:28:35.463,T004,1,initial,Timeout,GatewayTimeoutError,"T004 Process: no answer from gateway in time, charge state unknown",True,retry in 0.05 s,FAIL
+6,19:28:35.513,T004,2,retry 1,Timeout,GatewayTimeoutError,"T004 Process: no answer from gateway in time, charge state unknown",True,retry in 0.10 s,FAIL
+7,19:28:35.614,T004,3,retry 2,-,-,-,-,record,SUCCESS
+8,19:28:35.615,T005,1,initial,-,-,-,-,record,SUCCESS
+9,19:28:35.617,T006,1,initial,Database,DatabaseError,"T006 Record: commit failed, payment row is not saved",True,retry in 0.05 s,FAIL
+10,19:28:35.667,T006,2,retry 1,Database,DatabaseError,"T006 Record: commit failed, payment row is not saved",True,retry in 0.10 s,FAIL
+11,19:28:35.768,T006,3,retry 2,Database,DatabaseError,"T006 Record: commit failed, payment row is not saved",True,rollback to CP1,ROLLED BACK
+12,19:28:35.769,T007,1,initial,-,-,-,-,record,SUCCESS
+13,19:28:35.769,T008,1,initial,Network,NetworkError,"T008 Process: connection reset, request did not reach the gateway",True,retry in 0.05 s,FAIL
+14,19:28:35.820,T008,2,retry 1,-,-,-,-,record,SUCCESS
+15,19:28:35.820,T009,1,initial,-,-,-,-,record,SUCCESS
+16,19:28:35.821,T010,1,initial,Timeout,GatewayTimeoutError,"T010 Process: no answer from gateway in time, charge state unknown",True,retry in 0.05 s,FAIL
+17,19:28:35.872,T010,2,retry 1,Timeout,GatewayTimeoutError,"T010 Process: no answer from gateway in time, charge state unknown",True,retry in 0.10 s,FAIL
+18,19:28:35.973,T010,3,retry 2,-,-,-,-,record,SUCCESS
+19,19:28:35.974,T011,1,initial,-,-,-,-,record,SUCCESS
+20,19:28:35.976,T012,1,initial,Database,DatabaseError,"T012 Record: commit failed, payment row is not saved",True,retry in 0.05 s,FAIL
+21,19:28:36.026,T012,2,retry 1,Database,DatabaseError,"T012 Record: commit failed, payment row is not saved",True,retry in 0.10 s,FAIL
+22,19:28:36.128,T012,3,retry 2,Database,DatabaseError,"T012 Record: commit failed, payment row is not saved",True,rollback to CP2,ROLLED BACK
+23,19:28:36.128,T013,1,initial,-,-,-,-,record,SUCCESS
+24,19:28:36.129,T014,1,initial,-,-,-,-,record,SUCCESS
+25,19:28:36.129,T015,1,initial,Network,NetworkError,"T015 Process: connection reset, request did not reach the gateway",True,retry in 0.05 s,FAIL
+26,19:28:36.180,T015,2,retry 1,-,-,-,-,record,SUCCESS

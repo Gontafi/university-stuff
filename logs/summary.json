@@ -1,0 +1,618 @@
+{
+  "version": "2.0",
+  "source_sha256": "fa5108bf4a074599cab3a5c51995825fa8c5a3810e05dd81e4d0fcc1abf2f74a",
+  "python": "3.12.3",
+  "started": "2026-09-27T19:28:35",
+  "finished": "2026-09-27T19:28:36",
+  "total_amount": 437000,
+  "part_a": {
+    "attempted": 2,
+    "successful": 1,
+    "lost": 14,
+    "failed": 1,
+    "not_started": 13,
+    "processed_amount": 12000,
+    "lost_amount": 425000,
+    "stopped_at": "T002",
+    "crash": "NetworkError: T002 Process: connection reset, request did not reach the gateway"
+  },
+  "part_b": {
+    "successful": 8,
+    "failed": 7,
+    "processed_amount": 96000,
+    "lost_amount": 341000,
+    "table": [
+      {
+        "txn": "T002",
+        "failure": "Network",
+        "exception": "NetworkError",
+        "action": "caught, logged as transient, skipped",
+        "status": "FAILED"
+      },
+      {
+        "txn": "T004",
+        "failure": "Timeout",
+        "exception": "GatewayTimeoutError",
+        "action": "caught, logged (charge unknown), skipped",
+        "status": "FAILED"
+      },
+      {
+        "txn": "T006",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "action": "caught, logged, skipped (no rollback yet)",
+        "status": "FAILED"
+      },
+      {
+        "txn": "T008",
+        "failure": "Network",
+        "exception": "NetworkError",
+        "action": "caught, logged as transient, skipped",
+        "status": "FAILED"
+      },
+      {
+        "txn": "T010",
+        "failure": "Timeout",
+        "exception": "GatewayTimeoutError",
+        "action": "caught, logged (charge unknown), skipped",
+        "status": "FAILED"
+      },
+      {
+        "txn": "T012",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "action": "caught, logged, skipped (no rollback yet)",
+        "status": "FAILED"
+      },
+      {
+        "txn": "T015",
+        "failure": "Network",
+        "exception": "NetworkError",
+        "action": "caught, logged as transient, skipped",
+        "status": "FAILED"
+      }
+    ],
+    "errors": {
+      "T002": "T002 Process: connection reset, request did not reach the gateway",
+      "T004": "T004 Process: no answer from gateway in time, charge state unknown",
+      "T006": "T006 Record: commit failed, payment row is not saved",
+      "T008": "T008 Process: connection reset, request did not reach the gateway",
+      "T010": "T010 Process: no answer from gateway in time, charge state unknown",
+      "T012": "T012 Record: commit failed, payment row is not saved",
+      "T015": "T015 Process: connection reset, request did not reach the gateway"
+    },
+    "db_rows": 10,
+    "leaked_rows": [
+      "T006",
+      "T012"
+    ],
+    "consistency": {
+      "state_total": 96000,
+      "db_total": 246000,
+      "gateway_net": 341000,
+      "ok": false
+    }
+  },
+  "part_c": {
+    "attempt_log": [
+      {
+        "step": 1,
+        "time": "19:28:35.413",
+        "txn": "T001",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 2,
+        "time": "19:28:35.413",
+        "txn": "T002",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "Network",
+        "exception": "NetworkError",
+        "message": "T002 Process: connection reset, request did not reach the gateway",
+        "retryable": true,
+        "action": "retry in 0.05 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 3,
+        "time": "19:28:35.463",
+        "txn": "T002",
+        "attempt": 2,
+        "attempt_name": "retry 1",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 4,
+        "time": "19:28:35.463",
+        "txn": "T003",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 5,
+        "time": "19:28:35.463",
+        "txn": "T004",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "Timeout",
+        "exception": "GatewayTimeoutError",
+        "message": "T004 Process: no answer from gateway in time, charge state unknown",
+        "retryable": true,
+        "action": "retry in 0.05 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 6,
+        "time": "19:28:35.513",
+        "txn": "T004",
+        "attempt": 2,
+        "attempt_name": "retry 1",
+        "failure": "Timeout",
+        "exception": "GatewayTimeoutError",
+        "message": "T004 Process: no answer from gateway in time, charge state unknown",
+        "retryable": true,
+        "action": "retry in 0.10 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 7,
+        "time": "19:28:35.614",
+        "txn": "T004",
+        "attempt": 3,
+        "attempt_name": "retry 2",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 8,
+        "time": "19:28:35.615",
+        "txn": "T005",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 9,
+        "time": "19:28:35.617",
+        "txn": "T006",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "message": "T006 Record: commit failed, payment row is not saved",
+        "retryable": true,
+        "action": "retry in 0.05 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 10,
+        "time": "19:28:35.667",
+        "txn": "T006",
+        "attempt": 2,
+        "attempt_name": "retry 1",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "message": "T006 Record: commit failed, payment row is not saved",
+        "retryable": true,
+        "action": "retry in 0.10 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 11,
+        "time": "19:28:35.768",
+        "txn": "T006",
+        "attempt": 3,
+        "attempt_name": "retry 2",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "message": "T006 Record: commit failed, payment row is not saved",
+        "retryable": true,
+        "action": "rollback to CP1",
+        "result": "ROLLED BACK"
+      },
+      {
+        "step": 12,
+        "time": "19:28:35.769",
+        "txn": "T007",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 13,
+        "time": "19:28:35.769",
+        "txn": "T008",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "Network",
+        "exception": "NetworkError",
+        "message": "T008 Process: connection reset, request did not reach the gateway",
+        "retryable": true,
+        "action": "retry in 0.05 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 14,
+        "time": "19:28:35.820",
+        "txn": "T008",
+        "attempt": 2,
+        "attempt_name": "retry 1",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 15,
+        "time": "19:28:35.820",
+        "txn": "T009",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 16,
+        "time": "19:28:35.821",
+        "txn": "T010",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "Timeout",
+        "exception": "GatewayTimeoutError",
+        "message": "T010 Process: no answer from gateway in time, charge state unknown",
+        "retryable": true,
+        "action": "retry in 0.05 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 17,
+        "time": "19:28:35.872",
+        "txn": "T010",
+        "attempt": 2,
+        "attempt_name": "retry 1",
+        "failure": "Timeout",
+        "exception": "GatewayTimeoutError",
+        "message": "T010 Process: no answer from gateway in time, charge state unknown",
+        "retryable": true,
+        "action": "retry in 0.10 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 18,
+        "time": "19:28:35.973",
+        "txn": "T010",
+        "attempt": 3,
+        "attempt_name": "retry 2",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 19,
+        "time": "19:28:35.974",
+        "txn": "T011",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 20,
+        "time": "19:28:35.976",
+        "txn": "T012",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "message": "T012 Record: commit failed, payment row is not saved",
+        "retryable": true,
+        "action": "retry in 0.05 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 21,
+        "time": "19:28:36.026",
+        "txn": "T012",
+        "attempt": 2,
+        "attempt_name": "retry 1",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "message": "T012 Record: commit failed, payment row is not saved",
+        "retryable": true,
+        "action": "retry in 0.10 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 22,
+        "time": "19:28:36.128",
+        "txn": "T012",
+        "attempt": 3,
+        "attempt_name": "retry 2",
+        "failure": "Database",
+        "exception": "DatabaseError",
+        "message": "T012 Record: commit failed, payment row is not saved",
+        "retryable": true,
+        "action": "rollback to CP2",
+        "result": "ROLLED BACK"
+      },
+      {
+        "step": 23,
+        "time": "19:28:36.128",
+        "txn": "T013",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 24,
+        "time": "19:28:36.129",
+        "txn": "T014",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      },
+      {
+        "step": 25,
+        "time": "19:28:36.129",
+        "txn": "T015",
+        "attempt": 1,
+        "attempt_name": "initial",
+        "failure": "Network",
+        "exception": "NetworkError",
+        "message": "T015 Process: connection reset, request did not reach the gateway",
+        "retryable": true,
+        "action": "retry in 0.05 s",
+        "result": "FAIL"
+      },
+      {
+        "step": 26,
+        "time": "19:28:36.180",
+        "txn": "T015",
+        "attempt": 2,
+        "attempt_name": "retry 1",
+        "failure": "-",
+        "exception": "-",
+        "message": "-",
+        "retryable": "-",
+        "action": "record",
+        "result": "SUCCESS"
+      }
+    ],
+    "retries": 11
+  },
+  "part_d": {
+    "checkpoints": [
+      {
+        "name": "CP0",
+        "reason": "start of batch",
+        "time": "2026-09-27T19:28:35.412",
+        "last_txn": null,
+        "state": {
+          "success": 0,
+          "total": 0,
+          "committed": [],
+          "in_flight": {}
+        },
+        "db_rows": 0,
+        "gateway_net": 0
+      },
+      {
+        "name": "CP1",
+        "reason": "5 successful transactions",
+        "time": "2026-09-27T19:28:35.616",
+        "last_txn": "T005",
+        "state": {
+          "success": 5,
+          "total": 103000,
+          "committed": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005"
+          ],
+          "in_flight": {}
+        },
+        "db_rows": 5,
+        "gateway_net": 103000
+      },
+      {
+        "name": "CP2",
+        "reason": "10 successful transactions",
+        "time": "2026-09-27T19:28:35.974",
+        "last_txn": "T011",
+        "state": {
+          "success": 10,
+          "total": 214000,
+          "committed": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011"
+          ],
+          "in_flight": {}
+        },
+        "db_rows": 10,
+        "gateway_net": 214000
+      },
+      {
+        "name": "CP3",
+        "reason": "end of batch",
+        "time": "2026-09-27T19:28:36.180",
+        "last_txn": "T015",
+        "state": {
+          "success": 13,
+          "total": 287000,
+          "committed": [
+            "T001",
+            "T002",
+            "T003",
+            "T004",
+            "T005",
+            "T007",
+            "T008",
+            "T009",
+            "T010",
+            "T011",
+            "T013",
+            "T014",
+            "T015"
+          ],
+          "in_flight": {}
+        },
+        "db_rows": 13,
+        "gateway_net": 287000
+      }
+    ],
+    "status": {
+      "T001": "SUCCESS",
+      "T002": "SUCCESS",
+      "T003": "SUCCESS",
+      "T004": "SUCCESS",
+      "T005": "SUCCESS",
+      "T006": "ROLLED BACK",
+      "T007": "SUCCESS",
+      "T008": "SUCCESS",
+      "T009": "SUCCESS",
+      "T010": "SUCCESS",
+      "T011": "SUCCESS",
+      "T012": "ROLLED BACK",
+      "T013": "SUCCESS",
+      "T014": "SUCCESS",
+      "T015": "SUCCESS"
+    }
+  },
+  "part_e": {
+    "baseline": {
+      "successful": 1,
+      "failed": 14,
+      "lost_amount": 425000,
+      "retries": 0,
+      "rollbacks": 0,
+      "completion_rate": 0.06666666666666667
+    },
+    "exceptions_only": {
+      "successful": 8,
+      "failed": 7,
+      "lost_amount": 341000,
+      "completion_rate": 0.5333333333333333
+    },
+    "fault_tolerant": {
+      "successful": 13,
+      "failed": 2,
+      "processed_amount": 287000,
+      "lost_amount": 150000,
+      "retries": 11,
+      "rollbacks": 2,
+      "attempts": 26,
+      "completion_rate": 0.8666666666666667
+    },
+    "completion_gain_pp": 80.0,
+    "txn_loss_reduction": 0.8571428571428571,
+    "amount_loss_reduction": 0.6470588235294118,
+    "faulty": 7,
+    "recovered": [
+      "T002",
+      "T004",
+      "T008",
+      "T010",
+      "T015"
+    ],
+    "recovery_rate": 0.7142857142857143,
+    "rolled_back": [
+      "T006",
+      "T012"
+    ],
+    "contribution": {
+      "exception_handling": {
+        "txns": 7,
+        "amount": 84000
+      },
+      "retry": {
+        "txns": 5,
+        "amount": 191000
+      },
+      "rollback": {
+        "txns": 0,
+        "amount": 0
+      }
+    },
+    "consistency": {
+      "state_total": 287000,
+      "db_total": 287000,
+      "gateway_net": 287000,
+      "ok": true
+    }
+  },
+  "idempotency": {
+    "gateway_net": 477000,
+    "db_total": 287000,
+    "overcharge": 190000,
+    "charged_more_than_once": {
+      "T004": 3,
+      "T010": 3
+    }
+  }
+}

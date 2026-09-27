@@ -1,0 +1,17 @@
+test_stops_at_first_failure (test_payment_processor.BaselineTest.test_stops_at_first_failure) ... ok
+test_checkpoint_is_not_changed_by_later_work (test_payment_processor.CheckpointRollbackTest.test_checkpoint_is_not_changed_by_later_work) ... ok
+test_checkpoints_every_five_successes (test_payment_processor.CheckpointRollbackTest.test_checkpoints_every_five_successes) ... ok
+test_rollback_keeps_state_db_and_gateway_equal (test_payment_processor.CheckpointRollbackTest.test_rollback_keeps_state_db_and_gateway_equal) ... ok
+test_rollback_replays_rows_committed_after_checkpoint (test_payment_processor.CheckpointRollbackTest.test_rollback_replays_rows_committed_after_checkpoint) ... ok
+test_batch_continues_after_failures (test_payment_processor.ExceptionHandlingTest.test_batch_continues_after_failures) ... ok
+test_validation_error_is_not_retried (test_payment_processor.ExceptionHandlingTest.test_validation_error_is_not_retried) ... ok
+test_without_rollback_failed_rows_leak_into_db (test_payment_processor.ExceptionHandlingTest.test_without_rollback_failed_rows_leak_into_db) ... ok
+test_keys_prevent_double_charge_after_timeout (test_payment_processor.IdempotencyTest.test_keys_prevent_double_charge_after_timeout) ... ok
+test_second_run_of_same_batch_does_not_charge_again (test_payment_processor.IdempotencyTest.test_second_run_of_same_batch_does_not_charge_again) ... ok
+test_attempts_follow_fault_rules (test_payment_processor.RetryTest.test_attempts_follow_fault_rules) ... ok
+test_final_status (test_payment_processor.RetryTest.test_final_status) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.010s
+
+OK

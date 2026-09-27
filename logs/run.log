@@ -1,0 +1,165 @@
+payment_processor.py v2.0  sha256 fa5108bf4a074599  Python 3.12.3
+Run started 2026-09-27T19:28:35  15 transactions, 437,000 KZT
+
+=== Part A - Baseline (no fault tolerance) ===
+19:28:35.411 ERROR   baseline_crash     mode=baseline exception=NetworkError error=T002 Process: connection reset, request did not reach the gateway attempted=2
+Metric                   Result                          
+-----------------------  --------------------------------
+Transactions attempted   2                               
+Successful transactions  1                               
+Transactions lost        14 (1 failed + 13 never started)
+Processed amount (KZT)   12,000                          
+Lost amount (KZT)        425,000                         
+
+=== Part B - Exception handling (no retry, no rollback) ===
+19:28:35.411 INFO    attempt            mode=exceptions step=1 txn=T001 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 WARNING attempt            mode=exceptions step=2 txn=T002 attempt=1 failure=Network exception=NetworkError action=skip, continue batch result=FAILED retryable=True error=T002 Process: connection reset, request did not reach the gateway
+19:28:35.412 INFO    attempt            mode=exceptions step=3 txn=T003 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 WARNING attempt            mode=exceptions step=4 txn=T004 attempt=1 failure=Timeout exception=GatewayTimeoutError action=skip, continue batch result=FAILED retryable=True error=T004 Process: no answer from gateway in time, charge state unknown
+19:28:35.412 INFO    attempt            mode=exceptions step=5 txn=T005 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 WARNING attempt            mode=exceptions step=6 txn=T006 attempt=1 failure=Database exception=DatabaseError action=skip, continue batch result=FAILED retryable=True error=T006 Record: commit failed, payment row is not saved
+19:28:35.412 INFO    attempt            mode=exceptions step=7 txn=T007 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 WARNING attempt            mode=exceptions step=8 txn=T008 attempt=1 failure=Network exception=NetworkError action=skip, continue batch result=FAILED retryable=True error=T008 Process: connection reset, request did not reach the gateway
+19:28:35.412 INFO    attempt            mode=exceptions step=9 txn=T009 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 WARNING attempt            mode=exceptions step=10 txn=T010 attempt=1 failure=Timeout exception=GatewayTimeoutError action=skip, continue batch result=FAILED retryable=True error=T010 Process: no answer from gateway in time, charge state unknown
+19:28:35.412 INFO    attempt            mode=exceptions step=11 txn=T011 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 WARNING attempt            mode=exceptions step=12 txn=T012 attempt=1 failure=Database exception=DatabaseError action=skip, continue batch result=FAILED retryable=True error=T012 Record: commit failed, payment row is not saved
+19:28:35.412 INFO    attempt            mode=exceptions step=13 txn=T013 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 INFO    attempt            mode=exceptions step=14 txn=T014 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.412 WARNING attempt            mode=exceptions step=15 txn=T015 attempt=1 failure=Network exception=NetworkError action=skip, continue batch result=FAILED retryable=True error=T015 Process: connection reset, request did not reach the gateway
+Transaction  Failure   Exception            Recovery action                            Final status
+-----------  --------  -------------------  -----------------------------------------  ------------
+T002         Network   NetworkError         caught, logged as transient, skipped       FAILED      
+T004         Timeout   GatewayTimeoutError  caught, logged (charge unknown), skipped   FAILED      
+T006         Database  DatabaseError        caught, logged, skipped (no rollback yet)  FAILED      
+T008         Network   NetworkError         caught, logged as transient, skipped       FAILED      
+T010         Timeout   GatewayTimeoutError  caught, logged (charge unknown), skipped   FAILED      
+T012         Database  DatabaseError        caught, logged, skipped (no rollback yet)  FAILED      
+T015         Network   NetworkError         caught, logged as transient, skipped       FAILED      
+Successful 8, failed 7, processed 96,000 KZT, lost 341,000 KZT
+Consistency check: state total 96,000, DB total 246,000, gateway charged 341,000 -> MISMATCH
+Rows of failed transactions that still reached the DB (no rollback): T006, T012
+
+=== Parts C and D - Retry + checkpoint/rollback (fault-tolerant run) ===
+19:28:35.413 INFO    checkpoint         mode=fault-tolerant cp=CP0 success=0 total=0 last_txn=None reason=start of batch
+19:28:35.413 INFO    attempt            mode=fault-tolerant step=1 txn=T001 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.413 WARNING attempt            mode=fault-tolerant step=2 txn=T002 attempt=1 failure=Network exception=NetworkError action=retry in 0.05 s result=FAIL retryable=True error=T002 Process: connection reset, request did not reach the gateway
+19:28:35.463 INFO    attempt            mode=fault-tolerant step=3 txn=T002 attempt=2 failure=- exception=- action=record result=SUCCESS
+19:28:35.463 INFO    attempt            mode=fault-tolerant step=4 txn=T003 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.463 WARNING attempt            mode=fault-tolerant step=5 txn=T004 attempt=1 failure=Timeout exception=GatewayTimeoutError action=retry in 0.05 s result=FAIL retryable=True error=T004 Process: no answer from gateway in time, charge state unknown
+19:28:35.514 WARNING attempt            mode=fault-tolerant step=6 txn=T004 attempt=2 failure=Timeout exception=GatewayTimeoutError action=retry in 0.10 s result=FAIL retryable=True error=T004 Process: no answer from gateway in time, charge state unknown
+19:28:35.615 INFO    attempt            mode=fault-tolerant step=7 txn=T004 attempt=3 failure=- exception=- action=record result=SUCCESS
+19:28:35.615 INFO    attempt            mode=fault-tolerant step=8 txn=T005 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.616 INFO    checkpoint         mode=fault-tolerant cp=CP1 success=5 total=103000 last_txn=T005 reason=5 successful transactions
+19:28:35.617 WARNING attempt            mode=fault-tolerant step=9 txn=T006 attempt=1 failure=Database exception=DatabaseError action=retry in 0.05 s result=FAIL retryable=True error=T006 Record: commit failed, payment row is not saved
+19:28:35.667 WARNING attempt            mode=fault-tolerant step=10 txn=T006 attempt=2 failure=Database exception=DatabaseError action=retry in 0.10 s result=FAIL retryable=True error=T006 Record: commit failed, payment row is not saved
+19:28:35.768 WARNING rollback           mode=fault-tolerant txn=T006 to=CP1 dirty_total=173000 restored_total=103000 refunded=70000 replayed=0 consistent=True
+19:28:35.768 WARNING attempt            mode=fault-tolerant step=11 txn=T006 attempt=3 failure=Database exception=DatabaseError action=rollback to CP1 result=ROLLED BACK retryable=True error=T006 Record: commit failed, payment row is not saved
+19:28:35.769 INFO    attempt            mode=fault-tolerant step=12 txn=T007 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.769 WARNING attempt            mode=fault-tolerant step=13 txn=T008 attempt=1 failure=Network exception=NetworkError action=retry in 0.05 s result=FAIL retryable=True error=T008 Process: connection reset, request did not reach the gateway
+19:28:35.820 INFO    attempt            mode=fault-tolerant step=14 txn=T008 attempt=2 failure=- exception=- action=record result=SUCCESS
+19:28:35.820 INFO    attempt            mode=fault-tolerant step=15 txn=T009 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.821 WARNING attempt            mode=fault-tolerant step=16 txn=T010 attempt=1 failure=Timeout exception=GatewayTimeoutError action=retry in 0.05 s result=FAIL retryable=True error=T010 Process: no answer from gateway in time, charge state unknown
+19:28:35.872 WARNING attempt            mode=fault-tolerant step=17 txn=T010 attempt=2 failure=Timeout exception=GatewayTimeoutError action=retry in 0.10 s result=FAIL retryable=True error=T010 Process: no answer from gateway in time, charge state unknown
+19:28:35.973 INFO    attempt            mode=fault-tolerant step=18 txn=T010 attempt=3 failure=- exception=- action=record result=SUCCESS
+19:28:35.974 INFO    attempt            mode=fault-tolerant step=19 txn=T011 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:35.975 INFO    checkpoint         mode=fault-tolerant cp=CP2 success=10 total=214000 last_txn=T011 reason=10 successful transactions
+19:28:35.976 WARNING attempt            mode=fault-tolerant step=20 txn=T012 attempt=1 failure=Database exception=DatabaseError action=retry in 0.05 s result=FAIL retryable=True error=T012 Record: commit failed, payment row is not saved
+19:28:36.026 WARNING attempt            mode=fault-tolerant step=21 txn=T012 attempt=2 failure=Database exception=DatabaseError action=retry in 0.10 s result=FAIL retryable=True error=T012 Record: commit failed, payment row is not saved
+19:28:36.127 WARNING rollback           mode=fault-tolerant txn=T012 to=CP2 dirty_total=294000 restored_total=214000 refunded=80000 replayed=0 consistent=True
+19:28:36.128 WARNING attempt            mode=fault-tolerant step=22 txn=T012 attempt=3 failure=Database exception=DatabaseError action=rollback to CP2 result=ROLLED BACK retryable=True error=T012 Record: commit failed, payment row is not saved
+19:28:36.128 INFO    attempt            mode=fault-tolerant step=23 txn=T013 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.129 INFO    attempt            mode=fault-tolerant step=24 txn=T014 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.129 WARNING attempt            mode=fault-tolerant step=25 txn=T015 attempt=1 failure=Network exception=NetworkError action=retry in 0.05 s result=FAIL retryable=True error=T015 Process: connection reset, request did not reach the gateway
+19:28:36.180 INFO    attempt            mode=fault-tolerant step=26 txn=T015 attempt=2 failure=- exception=- action=record result=SUCCESS
+19:28:36.181 INFO    checkpoint         mode=fault-tolerant cp=CP3 success=13 total=287000 last_txn=T015 reason=end of batch
+
+Part C - attempt log
+Step  Time          Txn   Attempt      Failure   Action           Result     
+----  ------------  ----  -----------  --------  ---------------  -----------
+1     19:28:35.413  T001  1 (initial)  -         record           SUCCESS    
+2     19:28:35.413  T002  1 (initial)  Network   retry in 0.05 s  FAIL       
+3     19:28:35.463  T002  2 (retry 1)  -         record           SUCCESS    
+4     19:28:35.463  T003  1 (initial)  -         record           SUCCESS    
+5     19:28:35.463  T004  1 (initial)  Timeout   retry in 0.05 s  FAIL       
+6     19:28:35.513  T004  2 (retry 1)  Timeout   retry in 0.10 s  FAIL       
+7     19:28:35.614  T004  3 (retry 2)  -         record           SUCCESS    
+8     19:28:35.615  T005  1 (initial)  -         record           SUCCESS    
+9     19:28:35.617  T006  1 (initial)  Database  retry in 0.05 s  FAIL       
+10    19:28:35.667  T006  2 (retry 1)  Database  retry in 0.10 s  FAIL       
+11    19:28:35.768  T006  3 (retry 2)  Database  rollback to CP1  ROLLED BACK
+12    19:28:35.769  T007  1 (initial)  -         record           SUCCESS    
+13    19:28:35.769  T008  1 (initial)  Network   retry in 0.05 s  FAIL       
+14    19:28:35.820  T008  2 (retry 1)  -         record           SUCCESS    
+15    19:28:35.820  T009  1 (initial)  -         record           SUCCESS    
+16    19:28:35.821  T010  1 (initial)  Timeout   retry in 0.05 s  FAIL       
+17    19:28:35.872  T010  2 (retry 1)  Timeout   retry in 0.10 s  FAIL       
+18    19:28:35.973  T010  3 (retry 2)  -         record           SUCCESS    
+19    19:28:35.974  T011  1 (initial)  -         record           SUCCESS    
+20    19:28:35.976  T012  1 (initial)  Database  retry in 0.05 s  FAIL       
+21    19:28:36.026  T012  2 (retry 1)  Database  retry in 0.10 s  FAIL       
+22    19:28:36.128  T012  3 (retry 2)  Database  rollback to CP2  ROLLED BACK
+23    19:28:36.128  T013  1 (initial)  -         record           SUCCESS    
+24    19:28:36.129  T014  1 (initial)  -         record           SUCCESS    
+25    19:28:36.129  T015  1 (initial)  Network   retry in 0.05 s  FAIL       
+26    19:28:36.180  T015  2 (retry 1)  -         record           SUCCESS    
+
+Part D - checkpoints
+Checkpoint  Successful  Total (KZT)  Last txn  Reason                    
+----------  ----------  -----------  --------  --------------------------
+CP1         5           103,000      T005      5 successful transactions 
+CP2         10          214,000      T011      10 successful transactions
+CP3         13          287,000      T015      end of batch              
+Consistency check: state total 287,000, DB total 287,000, gateway charged 287,000 -> OK
+
+=== Part E - Before/after ===
+Metric                   Baseline  Exceptions only  Fault-tolerant  Improvement
+-----------------------  --------  ---------------  --------------  -----------
+Successful transactions  1         8                13              +12        
+Failed transactions      14        7                2               -12        
+Lost amount (KZT)        425,000   341,000          150,000         -275,000   
+Retries                  0         0                11              -          
+Rollbacks                0         0                2               -          
+Completion rate          6.67%     53.33%           86.67%          +80.00 pp  
+Transaction-loss reduction: (14 - 2) / 14 = 85.71%
+Amount-loss reduction: (425,000 - 150,000) / 425,000 = 64.71%
+Recovered by retry: 5 of 7 faulty transactions (T002, T004, T008, T010, T015)
+
+=== Extra - same fault-tolerant run WITHOUT idempotency keys ===
+19:28:36.186 INFO    checkpoint         mode=no-idempotency cp=CP0 success=0 total=0 last_txn=None reason=start of batch
+19:28:36.186 INFO    attempt            mode=no-idempotency step=1 txn=T001 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.186 WARNING attempt            mode=no-idempotency step=2 txn=T002 attempt=1 failure=Network exception=NetworkError action=retry in 0.05 s result=FAIL retryable=True error=T002 Process: connection reset, request did not reach the gateway
+19:28:36.237 INFO    attempt            mode=no-idempotency step=3 txn=T002 attempt=2 failure=- exception=- action=record result=SUCCESS
+19:28:36.237 INFO    attempt            mode=no-idempotency step=4 txn=T003 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.238 WARNING attempt            mode=no-idempotency step=5 txn=T004 attempt=1 failure=Timeout exception=GatewayTimeoutError action=retry in 0.05 s result=FAIL retryable=True error=T004 Process: no answer from gateway in time, charge state unknown
+19:28:36.288 WARNING attempt            mode=no-idempotency step=6 txn=T004 attempt=2 failure=Timeout exception=GatewayTimeoutError action=retry in 0.10 s result=FAIL retryable=True error=T004 Process: no answer from gateway in time, charge state unknown
+19:28:36.389 INFO    attempt            mode=no-idempotency step=7 txn=T004 attempt=3 failure=- exception=- action=record result=SUCCESS
+19:28:36.389 INFO    attempt            mode=no-idempotency step=8 txn=T005 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.389 INFO    checkpoint         mode=no-idempotency cp=CP1 success=5 total=103000 last_txn=T005 reason=5 successful transactions
+19:28:36.390 WARNING attempt            mode=no-idempotency step=9 txn=T006 attempt=1 failure=Database exception=DatabaseError action=retry in 0.05 s result=FAIL retryable=True error=T006 Record: commit failed, payment row is not saved
+19:28:36.440 WARNING attempt            mode=no-idempotency step=10 txn=T006 attempt=2 failure=Database exception=DatabaseError action=retry in 0.10 s result=FAIL retryable=True error=T006 Record: commit failed, payment row is not saved
+19:28:36.541 WARNING rollback           mode=no-idempotency txn=T006 to=CP1 dirty_total=173000 restored_total=103000 refunded=210000 replayed=0 consistent=False
+19:28:36.541 WARNING attempt            mode=no-idempotency step=11 txn=T006 attempt=3 failure=Database exception=DatabaseError action=rollback to CP1 result=ROLLED BACK retryable=True error=T006 Record: commit failed, payment row is not saved
+19:28:36.541 INFO    attempt            mode=no-idempotency step=12 txn=T007 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.542 WARNING attempt            mode=no-idempotency step=13 txn=T008 attempt=1 failure=Network exception=NetworkError action=retry in 0.05 s result=FAIL retryable=True error=T008 Process: connection reset, request did not reach the gateway
+19:28:36.592 INFO    attempt            mode=no-idempotency step=14 txn=T008 attempt=2 failure=- exception=- action=record result=SUCCESS
+19:28:36.593 INFO    attempt            mode=no-idempotency step=15 txn=T009 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.593 WARNING attempt            mode=no-idempotency step=16 txn=T010 attempt=1 failure=Timeout exception=GatewayTimeoutError action=retry in 0.05 s result=FAIL retryable=True error=T010 Process: no answer from gateway in time, charge state unknown
+19:28:36.644 WARNING attempt            mode=no-idempotency step=17 txn=T010 attempt=2 failure=Timeout exception=GatewayTimeoutError action=retry in 0.10 s result=FAIL retryable=True error=T010 Process: no answer from gateway in time, charge state unknown
+19:28:36.744 INFO    attempt            mode=no-idempotency step=18 txn=T010 attempt=3 failure=- exception=- action=record result=SUCCESS
+19:28:36.744 INFO    attempt            mode=no-idempotency step=19 txn=T011 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.745 INFO    checkpoint         mode=no-idempotency cp=CP2 success=10 total=214000 last_txn=T011 reason=10 successful transactions
+19:28:36.745 WARNING attempt            mode=no-idempotency step=20 txn=T012 attempt=1 failure=Database exception=DatabaseError action=retry in 0.05 s result=FAIL retryable=True error=T012 Record: commit failed, payment row is not saved
+19:28:36.795 WARNING attempt            mode=no-idempotency step=21 txn=T012 attempt=2 failure=Database exception=DatabaseError action=retry in 0.10 s result=FAIL retryable=True error=T012 Record: commit failed, payment row is not saved
+19:28:36.896 WARNING rollback           mode=no-idempotency txn=T012 to=CP2 dirty_total=294000 restored_total=214000 refunded=240000 replayed=0 consistent=False
+19:28:36.897 WARNING attempt            mode=no-idempotency step=22 txn=T012 attempt=3 failure=Database exception=DatabaseError action=rollback to CP2 result=ROLLED BACK retryable=True error=T012 Record: commit failed, payment row is not saved
+19:28:36.897 INFO    attempt            mode=no-idempotency step=23 txn=T013 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.897 INFO    attempt            mode=no-idempotency step=24 txn=T014 attempt=1 failure=- exception=- action=record result=SUCCESS
+19:28:36.897 WARNING attempt            mode=no-idempotency step=25 txn=T015 attempt=1 failure=Network exception=NetworkError action=retry in 0.05 s result=FAIL retryable=True error=T015 Process: connection reset, request did not reach the gateway
+19:28:36.948 INFO    attempt            mode=no-idempotency step=26 txn=T015 attempt=2 failure=- exception=- action=record result=SUCCESS
+19:28:36.949 INFO    checkpoint         mode=no-idempotency cp=CP3 success=13 total=287000 last_txn=T015 reason=end of batch
+Gateway charged 477,000 KZT, DB recorded 287,000 KZT, overcharge 190,000 KZT
+  T004: charged 3 times x 45,000 KZT
+  T010: charged 3 times x 50,000 KZT
+
+Logs written to /home/gontafi/Desktop/uni/ftr/logs

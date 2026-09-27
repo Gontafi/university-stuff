@@ -1,0 +1,14 @@
+{
+  "name": "CP0",
+  "reason": "start of batch",
+  "time": "2026-09-27T19:28:35.412",
+  "last_txn": null,
+  "state": {
+    "success": 0,
+    "total": 0,
+    "committed": [],
+    "in_flight": {}
+  },
+  "db_rows": 0,
+  "gateway_net": 0
+}

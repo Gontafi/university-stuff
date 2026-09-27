@@ -1,0 +1,28 @@
+{
+  "name": "CP3",
+  "reason": "end of batch",
+  "time": "2026-09-27T19:28:36.180",
+  "last_txn": "T015",
+  "state": {
+    "success": 13,
+    "total": 287000,
+    "committed": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T007",
+      "T008",
+      "T009",
+      "T010",
+      "T011",
+      "T013",
+      "T014",
+      "T015"
+    ],
+    "in_flight": {}
+  },
+  "db_rows": 13,
+  "gateway_net": 287000
+}

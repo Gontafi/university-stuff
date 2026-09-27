@@ -1,0 +1,25 @@
+{
+  "name": "CP2",
+  "reason": "10 successful transactions",
+  "time": "2026-09-27T19:28:35.974",
+  "last_txn": "T011",
+  "state": {
+    "success": 10,
+    "total": 214000,
+    "committed": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T007",
+      "T008",
+      "T009",
+      "T010",
+      "T011"
+    ],
+    "in_flight": {}
+  },
+  "db_rows": 10,
+  "gateway_net": 214000
+}
