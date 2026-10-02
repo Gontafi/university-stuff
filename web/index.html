@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>University · Fault tolerance</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#202d3b;background:#f5f7fa;font-size:15px}*{box-sizing:border-box}body{max-width:1040px;margin:auto;padding:32px 20px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}h1{font-size:25px;margin:0}h2{font-size:17px;margin:0 0 20px}small{color:#6b7787}.badge{border-radius:20px;padding:7px 13px;background:#e5edff;color:#285cc3}.grid{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}.card{padding:24px;background:white;border:1px solid #e2e7ee;border-radius:12px;margin-bottom:20px}label{display:block;margin:12px 0 6px;color:#566477;font-size:13px}input,select,button{font:inherit;border-radius:7px;padding:10px 12px}input,select{width:100%;border:1px solid #d9dfe7;background:white}button{cursor:pointer;background:#285cc3;color:white;border:0;margin-top:14px}button.secondary{background:#edf2fb;color:#285cc3}button:disabled{opacity:.5;cursor:wait}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #edf0f4;padding:11px 6px}th{font-size:12px;color:#6b7787}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7fa;padding:16px;border-radius:7px;font-size:13px;min-height:65px}#status{margin-bottom:18px;min-height:22px;color:#566477}footer{font-size:12px;color:#6b7787;margin-top:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}body{padding:20px 14px}}
+</style>
+<header><div><h1>University</h1><small>Студенты, оплата и академические записи</small></div><span class="badge" id="mode">Подключение…</span></header>
+<div id="status" role="status" aria-live="polite"></div>
+<div class="grid"><section>
+<div class="card"><h2>Студенты</h2><form id="register"><label for="name">Имя студента</label><input id="name" maxlength="100" required placeholder="Имя и фамилия"><button>Зарегистрировать</button></form><table><thead><tr><th>ID</th><th>Имя</th><th>Оплачено, ₸</th></tr></thead><tbody id="students"></tbody></table><button class="secondary" id="refresh">Обновить</button></div>
+<div class="card"><h2>Выписка</h2><label for="transcriptStudent">Студент</label><select id="transcriptStudent"></select><button id="transcript">Сформировать выписку</button><pre id="output">Выберите студента</pre></div>
+</section><section>
+<div class="card"><h2>Оплата обучения</h2><form id="payment"><label for="paymentStudent">Студент</label><select id="paymentStudent" required></select><label for="amount">Сумма, ₸</label><input type="number" id="amount" min="1" max="1000000" step="1" value="10000" required><button>Оплатить</button></form><small>При ошибке повторите отправку с той же суммой.</small></div>
+<div class="card"><h2>Академическая запись</h2><form id="grade"><label for="gradeStudent">Студент</label><select id="gradeStudent" required></select><label for="course">Дисциплина</label><input id="course" maxlength="100" value="Fault Tolerance" required><label for="score">Оценка</label><input type="number" id="score" min="0" max="100" value="90" required><button>Сохранить оценку</button></form></div>
+<div class="card"><h2>Целостность данных</h2><button class="secondary" id="audit">Проверить</button><pre id="auditOutput">Проверка ещё не выполнялась</pre></div>
+</section></div><footer>Учебный проект · Go / PostgreSQL / minikube</footer>
+<script>
+const $=id=>document.getElementById(id);
+let paymentAttempt=null;
+async function api(path,method='GET',body,headers={}){
+ const r=await fetch('/api/'+path,{method,headers:{'Content-Type':'application/json',...headers},body:body?JSON.stringify(body):undefined});
+ const data=await r.json();if(!r.ok)throw Error(data.error||'Сервис недоступен');
+ $('status').textContent=r.headers.get('X-Degraded')?'Показана сохранённая выписка. Данные могут быть устаревшими.':'Операция выполнена';return data;
+}
+async function refresh(){
+ const data=await api('students');$('students').replaceChildren();
+ for(const s of data){const tr=document.createElement('tr');for(const value of [s.id,s.name,(s.paid/100).toLocaleString('ru-RU')]){const td=document.createElement('td');td.textContent=value;tr.append(td)}$('students').append(tr)}
+ for(const id of ['paymentStudent','gradeStudent','transcriptStudent']){const old=$(id).value;$(id).replaceChildren();for(const s of data){const o=document.createElement('option');o.value=s.id;o.textContent=s.name;$(id).append(o)}if(data.some(s=>String(s.id)===old))$(id).value=old}
+}
+async function run(button,fn){button.disabled=true;try{await fn()}catch(e){$('status').textContent=e.message}finally{button.disabled=false}}
+$('register').onsubmit=e=>{e.preventDefault();run(e.submitter,async()=>{await api('students','POST',{name:$('name').value});$('name').value='';await refresh()})};
+$('payment').onsubmit=e=>{e.preventDefault();run(e.submitter,async()=>{const p={student_id:Number($('paymentStudent').value),amount:Number($('amount').value)*100};const fingerprint=JSON.stringify(p);if(!paymentAttempt||paymentAttempt.fingerprint!==fingerprint)paymentAttempt={fingerprint,key:Array.from(crypto.getRandomValues(new Uint8Array(16)),x=>x.toString(16).padStart(2,'0')).join('')};await api('payments','POST',p,{'Idempotency-Key':paymentAttempt.key});paymentAttempt=null;await refresh()})};
+$('grade').onsubmit=e=>{e.preventDefault();run(e.submitter,async()=>{await api('grades','POST',{student_id:Number($('gradeStudent').value),course:$('course').value,grade:Number($('score').value)})})};
+$('refresh').onclick=e=>run(e.target,refresh);
+$('transcript').onclick=e=>run(e.target,async()=>{$('output').textContent=JSON.stringify(await api('transcript?student_id='+$('transcriptStudent').value),null,2)});
+$('audit').onclick=e=>run(e.target,async()=>{$('auditOutput').textContent=JSON.stringify(await api('audit'),null,2)});
+run($('refresh'),async()=>{const info=await api('info');$('mode').textContent=info.mode==='ft'?'Fault tolerant':'Baseline';await refresh()});
+</script>
+</html>
