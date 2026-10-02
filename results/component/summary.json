@@ -1,0 +1,165 @@
+[
+  {
+    "mode": "baseline",
+    "scenario": "transient_dependency",
+    "environment": "in-process simulated dependency; no PostgreSQL or Kubernetes",
+    "duration_s": 0.113630679,
+    "requests": 100,
+    "successful_requests": 80,
+    "failed_requests": 20,
+    "sla_failed_requests": 20,
+    "recovered_requests": 0,
+    "degraded_requests": 0,
+    "recovered_transactions": 0,
+    "request_availability": 0.8,
+    "sla_request_availability": 0.8,
+    "full_request_availability": 0.8,
+    "sampled_time_availability": 0.807750528358631,
+    "downtime_s": 0.02184543799999999,
+    "failure_episodes": 20,
+    "failure_rate_per_uptime_s": 217.89995626856827,
+    "mttf_observed_s": 0.004464595,
+    "mean_uptime_before_failure_s": 0.00458926205,
+    "mtbf_observed_s": 0.005689459157894736,
+    "exposure_s_per_failure": 0.00568153395,
+    "mttr_observed_s": 0.0010936356842105258,
+    "right_censored_episodes": 1,
+    "service_detection_s": 1.2571999999999757e-05,
+    "recovery_after_clear_s": null,
+    "p95_latency_s": 2.7105e-05,
+    "consistent": null,
+    "episodes": [
+      {
+        "start": 0.004464595,
+        "end": 0.005547525,
+        "censored": false
+      },
+      {
+        "start": 0.009912234,
+        "end": 0.011009564,
+        "censored": false
+      },
+      {
+        "start": 0.015346704,
+        "end": 0.016430433,
+        "censored": false
+      },
+      {
+        "start": 0.020798563,
+        "end": 0.021882707,
+        "censored": false
+      },
+      {
+        "start": 0.027656685,
+        "end": 0.028778189,
+        "censored": false
+      },
+      {
+        "start": 0.0331942,
+        "end": 0.034297205,
+        "censored": false
+      },
+      {
+        "start": 0.038808157,
+        "end": 0.039879743,
+        "censored": false
+      },
+      {
+        "start": 0.044307137,
+        "end": 0.045405417,
+        "censored": false
+      },
+      {
+        "start": 0.04997964,
+        "end": 0.051040743,
+        "censored": false
+      },
+      {
+        "start": 0.055375954,
+        "end": 0.056574787,
+        "censored": false
+      },
+      {
+        "start": 0.061039377,
+        "end": 0.062159832,
+        "censored": false
+      },
+      {
+        "start": 0.066738135,
+        "end": 0.067816403,
+        "censored": false
+      },
+      {
+        "start": 0.07212581,
+        "end": 0.073195935,
+        "censored": false
+      },
+      {
+        "start": 0.07752415,
+        "end": 0.078589813,
+        "censored": false
+      },
+      {
+        "start": 0.082918081,
+        "end": 0.083977196,
+        "censored": false
+      },
+      {
+        "start": 0.090747393,
+        "end": 0.091830996,
+        "censored": false
+      },
+      {
+        "start": 0.096232224,
+        "end": 0.097365172,
+        "censored": false
+      },
+      {
+        "start": 0.101767057,
+        "end": 0.102827909,
+        "censored": false
+      },
+      {
+        "start": 0.107141283,
+        "end": 0.108246888,
+        "censored": false
+      },
+      {
+        "start": 0.112564319,
+        "end": 0.113630679,
+        "censored": true
+      }
+    ]
+  },
+  {
+    "mode": "ft",
+    "scenario": "transient_dependency",
+    "environment": "in-process simulated dependency; no PostgreSQL or Kubernetes",
+    "duration_s": 0.152536976,
+    "requests": 100,
+    "successful_requests": 100,
+    "failed_requests": 0,
+    "sla_failed_requests": 0,
+    "recovered_requests": 20,
+    "degraded_requests": 0,
+    "recovered_transactions": 0,
+    "request_availability": 1.0,
+    "sla_request_availability": 1.0,
+    "full_request_availability": 1.0,
+    "sampled_time_availability": 1.0,
+    "downtime_s": 0.0,
+    "failure_episodes": 0,
+    "failure_rate_per_uptime_s": 0.0,
+    "mttf_observed_s": null,
+    "mean_uptime_before_failure_s": null,
+    "mtbf_observed_s": null,
+    "exposure_s_per_failure": null,
+    "mttr_observed_s": null,
+    "right_censored_episodes": 0,
+    "service_detection_s": null,
+    "recovery_after_clear_s": 0.00214810700000001,
+    "p95_latency_s": 0.002214418,
+    "consistent": null,
+    "episodes": []
+  }
+]

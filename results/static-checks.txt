@@ -1,0 +1,6 @@
+baseline: parsed manifest; replicas, storage and placement checked
+ft: parsed manifest; replicas, storage and placement checked
+restore job: JSON parsed; inner shell syntax checked; separate recovery database
+Bash syntax: passed
+JavaScript syntax: passed
+No Kubernetes API validation or container deployment was performed.
