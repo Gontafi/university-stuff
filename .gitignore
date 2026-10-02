@@ -1,0 +1,8 @@
+.env
+bin/
+results/runs/
+*.dump
+__pycache__/
+/docs/
+/scripts/build_report.py
+/scripts/format_report.py
