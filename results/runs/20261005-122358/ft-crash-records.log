@@ -1,0 +1,3 @@
+[pod/records-5fb6cf79cd-pzhtx/records] {"time":"2026-10-05T07:23:10.005320668Z","level":"INFO","msg":"service started","role":"records","fault_tolerant":true}
+[pod/records-5fb6cf79cd-sv4x8/records] {"time":"2026-10-05T07:23:10.00840896Z","level":"INFO","msg":"service started","role":"records","fault_tolerant":true}
+[pod/records-5fb6cf79cd-sv4x8/records] {"time":"2026-10-05T07:24:24.777182853Z","level":"INFO","msg":"request","role":"records","method":"POST","path":"/grades","status":200,"duration_ms":6}

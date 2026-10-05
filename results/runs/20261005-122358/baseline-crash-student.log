@@ -1,0 +1,2 @@
+[pod/student-7fc4cfcff6-rbqtw/student] {"time":"2026-10-05T07:23:08.634331769Z","level":"INFO","msg":"service started","role":"student","fault_tolerant":false}
+[pod/student-7fc4cfcff6-rbqtw/student] {"time":"2026-10-05T07:23:58.796089229Z","level":"INFO","msg":"request","role":"student","method":"POST","path":"/students","status":201,"duration_ms":1}

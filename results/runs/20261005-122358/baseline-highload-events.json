@@ -1,0 +1,4253 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "626",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Successfully assigned university-baseline/gateway-fd59d8695-6pgg9 to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "gateway-fd59d8695-6pgg9.18db913e934340a5",
+                "namespace": "university-baseline",
+                "resourceVersion": "638",
+                "uid": "88e89f2d-987c-43ed-b334-b195fc1df9df"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "634",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "gateway-fd59d8695-6pgg9.18db913eb1dbacd0",
+                "namespace": "university-baseline",
+                "resourceVersion": "698",
+                "uid": "39d945c9-20e7-47ea-9818-dfa1e8d63588"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "634",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "gateway-fd59d8695-6pgg9.18db913ebff4df8d",
+                "namespace": "university-baseline",
+                "resourceVersion": "709",
+                "uid": "cd943602-835d-42a2-9424-a91e7b0ef732"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "634",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "gateway-fd59d8695-6pgg9.18db913ec4f83e09",
+                "namespace": "university-baseline",
+                "resourceVersion": "716",
+                "uid": "60ffeb02-a3cc-40cf-9b66-ac8d4ef3c225"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:27:24Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "1182",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:27:24Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:27:24Z",
+                "name": "gateway-fd59d8695-6pgg9.18db917d61d875be",
+                "namespace": "university-baseline",
+                "resourceVersion": "1666",
+                "uid": "ed1375ca-f6fa-4a51-9a81-e764517efea4"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:04Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:04Z",
+            "message": "Cancelling deletion of Pod university-baseline/gateway-fd59d8695-6pgg9",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:04Z",
+                "name": "gateway-fd59d8695-6pgg9.18db91bea776d9f1",
+                "namespace": "university-baseline",
+                "resourceVersion": "2033",
+                "uid": "8ce49eb7-282e-4d7e-b52d-d4d3951b2833"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:26Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "1665",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:26Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:26Z",
+                "name": "gateway-fd59d8695-6pgg9.18db91c3c6def78e",
+                "namespace": "university-baseline",
+                "resourceVersion": "2110",
+                "uid": "794a001e-4390-479f-bcc3-4e4d3dd3ba7d"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "1665",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "gateway-fd59d8695-6pgg9.18db91c3d3ea0924",
+                "namespace": "university-baseline",
+                "resourceVersion": "2132",
+                "uid": "61026965-a532-4f12-b506-235c92b167df"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "1665",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "gateway-fd59d8695-6pgg9.18db91c3d6fbf94d",
+                "namespace": "university-baseline",
+                "resourceVersion": "2143",
+                "uid": "73a098c9-88f3-4af8-b95e-cc936c6a0c86"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "1665",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "gateway-fd59d8695-6pgg9.18db91c3daac8331",
+                "namespace": "university-baseline",
+                "resourceVersion": "2149",
+                "uid": "c90a7f71-fc4a-4438-a16d-b1b0d80273de"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-6pgg9",
+                "namespace": "university-baseline",
+                "resourceVersion": "1665",
+                "uid": "772305e3-1a26-4aa5-8f44-d9467f803878"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Stopping container gateway",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "gateway-fd59d8695-6pgg9.18db91e3f303e9e3",
+                "namespace": "university-baseline",
+                "resourceVersion": "2539",
+                "uid": "fe276442-72ce-468b-802b-efc636f62092"
+            },
+            "reason": "Killing",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2541",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Successfully assigned university-baseline/gateway-fd59d8695-kjstg to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "gateway-fd59d8695-kjstg.18db91e3f47d9660",
+                "namespace": "university-baseline",
+                "resourceVersion": "2559",
+                "uid": "91628c5c-2e42-4a02-8047-f661b9fa0e61"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2549",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "gateway-fd59d8695-kjstg.18db91e4102485f0",
+                "namespace": "university-baseline",
+                "resourceVersion": "2693",
+                "uid": "5c0abf0b-1474-4815-b15a-80f84d9df9d5"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2549",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "gateway-fd59d8695-kjstg.18db91e413737a15",
+                "namespace": "university-baseline",
+                "resourceVersion": "2701",
+                "uid": "5d19b5a4-83de-4ec7-9ef4-d5edec5cd5cb"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2549",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "gateway-fd59d8695-kjstg.18db91e41687004f",
+                "namespace": "university-baseline",
+                "resourceVersion": "2705",
+                "uid": "efa094b1-7b8b-45e8-b1a0-4346fd71905f"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:49Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2707",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:25Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:49Z",
+                "name": "gateway-fd59d8695-kjstg.18db91f310a3d3e3",
+                "namespace": "university-baseline",
+                "resourceVersion": "3274",
+                "uid": "1c1b405f-7ccc-4140-ba98-994e566927d6"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:52Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2936",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:52Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:52Z",
+                "name": "gateway-fd59d8695-kjstg.18db91f3be525644",
+                "namespace": "university-baseline",
+                "resourceVersion": "3030",
+                "uid": "2a9b468a-0c3a-4710-a6fb-4ee6c9e258c3"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2936",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "gateway-fd59d8695-kjstg.18db91f3c9c304fa",
+                "namespace": "university-baseline",
+                "resourceVersion": "3054",
+                "uid": "752496f4-54a1-47d6-afd2-65563b8902ed"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2936",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "gateway-fd59d8695-kjstg.18db91f3cc1d9c2c",
+                "namespace": "university-baseline",
+                "resourceVersion": "3064",
+                "uid": "0057560a-e099-4b39-857f-aaef5f9a8274"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "2936",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "gateway-fd59d8695-kjstg.18db91f3ce4adebe",
+                "namespace": "university-baseline",
+                "resourceVersion": "3070",
+                "uid": "bde60562-59a9-4825-82ae-680475652858"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:35Z",
+            "message": "Cancelling deletion of Pod university-baseline/gateway-fd59d8695-kjstg",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:55Z",
+                "name": "gateway-fd59d8695-kjstg.18db91f43dcc38aa",
+                "namespace": "university-baseline",
+                "resourceVersion": "3473",
+                "uid": "5f279e55-0e16-4687-8329-d192d8b8dccc"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "3267",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "gateway-fd59d8695-kjstg.18db920afa9830ae",
+                "namespace": "university-baseline",
+                "resourceVersion": "3373",
+                "uid": "3dcd6394-e7c4-494c-b0e4-d8a12fecb7ec"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "3267",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "gateway-fd59d8695-kjstg.18db920b039c46b8",
+                "namespace": "university-baseline",
+                "resourceVersion": "3376",
+                "uid": "2e2f8973-eede-478b-8a81-8b236c2b0a69"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "3267",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "gateway-fd59d8695-kjstg.18db920b063fd48a",
+                "namespace": "university-baseline",
+                "resourceVersion": "3384",
+                "uid": "6b9eb29c-9df3-4120-8785-48eec9e7ac5f"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{gateway}",
+                "kind": "Pod",
+                "name": "gateway-fd59d8695-kjstg",
+                "namespace": "university-baseline",
+                "resourceVersion": "3267",
+                "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "gateway-fd59d8695-kjstg.18db920b0bde64b9",
+                "namespace": "university-baseline",
+                "resourceVersion": "3394",
+                "uid": "80878529-8d3c-40d0-bfa6-4013af2f6b2b"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "gateway-fd59d8695",
+                "namespace": "university-baseline",
+                "resourceVersion": "621",
+                "uid": "30374441-4cb5-4275-a342-ea82b0bd0990"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Created pod: gateway-fd59d8695-6pgg9",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "gateway-fd59d8695.18db913e928e3f13",
+                "namespace": "university-baseline",
+                "resourceVersion": "632",
+                "uid": "179eb3bc-a1db-4ea4-818f-145dffee819a"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "gateway-fd59d8695",
+                "namespace": "university-baseline",
+                "resourceVersion": "2155",
+                "uid": "30374441-4cb5-4275-a342-ea82b0bd0990"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Created pod: gateway-fd59d8695-kjstg",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "gateway-fd59d8695.18db91e3f3d6d4b9",
+                "namespace": "university-baseline",
+                "resourceVersion": "2547",
+                "uid": "e140ffdd-f78a-4fb0-95f7-07c752e69393"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "Deployment",
+                "name": "gateway",
+                "namespace": "university-baseline",
+                "resourceVersion": "618",
+                "uid": "c5c94686-5102-465b-abc5-e3d53761e1b5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Scaled up replica set gateway-fd59d8695 from 0 to 1",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "gateway.18db913e923b8932",
+                "namespace": "university-baseline",
+                "resourceVersion": "629",
+                "uid": "8cfb9de6-2eed-44c6-b6aa-741c9a1dd63a"
+            },
+            "reason": "ScalingReplicaSet",
+            "reportingComponent": "deployment-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2545",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Successfully assigned university-baseline/payment-7479d99b7-d7x5m to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "payment-7479d99b7-d7x5m.18db91e3f4d5bf06",
+                "namespace": "university-baseline",
+                "resourceVersion": "2567",
+                "uid": "51f85cee-9287-4b16-8d28-08b78ec9fbe0"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2553",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "payment-7479d99b7-d7x5m.18db91e4100ba13c",
+                "namespace": "university-baseline",
+                "resourceVersion": "2691",
+                "uid": "8d6b9b94-8397-4320-815f-4a4d9e1438eb"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2553",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "payment-7479d99b7-d7x5m.18db91e4138d9ba1",
+                "namespace": "university-baseline",
+                "resourceVersion": "2702",
+                "uid": "27a1e0c3-3477-4f38-b2bc-0e74bc83ae1c"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2553",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "payment-7479d99b7-d7x5m.18db91e4168ad22c",
+                "namespace": "university-baseline",
+                "resourceVersion": "2706",
+                "uid": "f03b5106-ebbb-4bda-b1ce-13e5969f5d75"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:49Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2722",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:25Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:49Z",
+                "name": "payment-7479d99b7-d7x5m.18db91f30e6f1c6c",
+                "namespace": "university-baseline",
+                "resourceVersion": "3311",
+                "uid": "71fd024a-7e8a-479d-ba7a-e1102479c6dc"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:52Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2911",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:52Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:52Z",
+                "name": "payment-7479d99b7-d7x5m.18db91f3c17a5aa0",
+                "namespace": "university-baseline",
+                "resourceVersion": "3037",
+                "uid": "c1006215-636d-4cbd-83dc-430dcb20d4ef"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2911",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "payment-7479d99b7-d7x5m.18db91f3cc00276f",
+                "namespace": "university-baseline",
+                "resourceVersion": "3063",
+                "uid": "9fcd9bcb-7ce4-474d-8ee7-a2a6678101cf"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2911",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "payment-7479d99b7-d7x5m.18db91f3ced393b9",
+                "namespace": "university-baseline",
+                "resourceVersion": "3072",
+                "uid": "e2863859-7a46-4385-81c8-160b84ef3fa8"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "2911",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "payment-7479d99b7-d7x5m.18db91f3d17c1955",
+                "namespace": "university-baseline",
+                "resourceVersion": "3083",
+                "uid": "59178082-56e0-4dd8-9751-aaa46d862a4e"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:35Z",
+            "message": "Cancelling deletion of Pod university-baseline/payment-7479d99b7-d7x5m",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:55Z",
+                "name": "payment-7479d99b7-d7x5m.18db91f43dcb9167",
+                "namespace": "university-baseline",
+                "resourceVersion": "3470",
+                "uid": "f7e5e862-0da1-48c7-8239-7a38a026c6ab"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "3304",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "payment-7479d99b7-d7x5m.18db920afb9c3cbd",
+                "namespace": "university-baseline",
+                "resourceVersion": "3375",
+                "uid": "f4596d68-af8d-43e3-8e0b-942cce5b608b"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "3304",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "payment-7479d99b7-d7x5m.18db920b04149aa1",
+                "namespace": "university-baseline",
+                "resourceVersion": "3379",
+                "uid": "1c1bcdfb-5e5a-4a1c-bec9-a2f0eaaa937c"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "3304",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "payment-7479d99b7-d7x5m.18db920b06e8a7b2",
+                "namespace": "university-baseline",
+                "resourceVersion": "3386",
+                "uid": "2b1f46ad-842d-4c89-bf7f-f0ceb3d4e247"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-d7x5m",
+                "namespace": "university-baseline",
+                "resourceVersion": "3304",
+                "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "payment-7479d99b7-d7x5m.18db920b0b4e9e3e",
+                "namespace": "university-baseline",
+                "resourceVersion": "3392",
+                "uid": "851c1aa1-3c12-4dd8-9bb0-53696f95237a"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:02Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1134",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:02Z",
+            "message": "Successfully assigned university-baseline/payment-7479d99b7-g745r to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:02Z",
+                "name": "payment-7479d99b7-g745r.18db914e3edc55c6",
+                "namespace": "university-baseline",
+                "resourceVersion": "1139",
+                "uid": "7ce9fce5-1cb3-40a6-8173-ef58b75a914d"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:02Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1137",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:02Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:02Z",
+                "name": "payment-7479d99b7-g745r.18db914e5a2e3400",
+                "namespace": "university-baseline",
+                "resourceVersion": "1144",
+                "uid": "7ec0b615-b548-4e54-8a04-308143acaf2e"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:02Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1137",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:02Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:02Z",
+                "name": "payment-7479d99b7-g745r.18db914e5ba45b8d",
+                "namespace": "university-baseline",
+                "resourceVersion": "1146",
+                "uid": "92d80391-414a-49bb-ac1c-c29ad0ef4206"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:02Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1137",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:02Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:02Z",
+                "name": "payment-7479d99b7-g745r.18db914e5f5a47f1",
+                "namespace": "university-baseline",
+                "resourceVersion": "1147",
+                "uid": "689e128c-fba8-472a-83cd-011646eb8930"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:27:24Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1337",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:27:24Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:27:24Z",
+                "name": "payment-7479d99b7-g745r.18db917d62d2ec4b",
+                "namespace": "university-baseline",
+                "resourceVersion": "1678",
+                "uid": "f0c0eb81-b68a-462f-8dc5-807023590b9e"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:04Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:04Z",
+            "message": "Cancelling deletion of Pod university-baseline/payment-7479d99b7-g745r",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:04Z",
+                "name": "payment-7479d99b7-g745r.18db91bea7770ebc",
+                "namespace": "university-baseline",
+                "resourceVersion": "2035",
+                "uid": "4d9556b3-d7b1-40dd-8eee-53e02f772bb0"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:26Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1676",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:26Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:26Z",
+                "name": "payment-7479d99b7-g745r.18db91c3ba868694",
+                "namespace": "university-baseline",
+                "resourceVersion": "2092",
+                "uid": "7c18fd59-bb02-43c2-9398-801078cd5ecf"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:26Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1676",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:26Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:26Z",
+                "name": "payment-7479d99b7-g745r.18db91c3c3a76955",
+                "namespace": "university-baseline",
+                "resourceVersion": "2099",
+                "uid": "17836884-5979-4723-8891-8aabc146520b"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:26Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1676",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:26Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:26Z",
+                "name": "payment-7479d99b7-g745r.18db91c3c9518ab5",
+                "namespace": "university-baseline",
+                "resourceVersion": "2113",
+                "uid": "c854af14-d517-49e8-ada8-8b03b3c49ebf"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:26Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1676",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:26Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:26Z",
+                "name": "payment-7479d99b7-g745r.18db91c3cb4c2544",
+                "namespace": "university-baseline",
+                "resourceVersion": "2120",
+                "uid": "ce1adf76-190b-42e2-98b4-c959b162da18"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-g745r",
+                "namespace": "university-baseline",
+                "resourceVersion": "1676",
+                "uid": "b6635177-ae8a-4c8b-9bd9-f97c9fa41655"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Stopping container payment",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "payment-7479d99b7-g745r.18db91e3f35638d5",
+                "namespace": "university-baseline",
+                "resourceVersion": "2543",
+                "uid": "302e4bc1-884a-4c9b-873a-e510dd8bfcca"
+            },
+            "reason": "Killing",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-lmkll",
+                "namespace": "university-baseline",
+                "resourceVersion": "670",
+                "uid": "3b942377-f7f6-42df-9212-18f5d0da67dc"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Successfully assigned university-baseline/payment-7479d99b7-lmkll to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "payment-7479d99b7-lmkll.18db913e96dfc310",
+                "namespace": "university-baseline",
+                "resourceVersion": "676",
+                "uid": "be7a590c-7968-4a9c-ab89-264d2c8682b4"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-lmkll",
+                "namespace": "university-baseline",
+                "resourceVersion": "673",
+                "uid": "3b942377-f7f6-42df-9212-18f5d0da67dc"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "payment-7479d99b7-lmkll.18db913eb3bd9fc7",
+                "namespace": "university-baseline",
+                "resourceVersion": "704",
+                "uid": "26d4574c-7d59-4aa5-b817-ef3cb4cfa08f"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-lmkll",
+                "namespace": "university-baseline",
+                "resourceVersion": "673",
+                "uid": "3b942377-f7f6-42df-9212-18f5d0da67dc"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "payment-7479d99b7-lmkll.18db913ec2639ebc",
+                "namespace": "university-baseline",
+                "resourceVersion": "714",
+                "uid": "2036eb1d-2924-4d2c-914f-f5573a05245b"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-lmkll",
+                "namespace": "university-baseline",
+                "resourceVersion": "673",
+                "uid": "3b942377-f7f6-42df-9212-18f5d0da67dc"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "payment-7479d99b7-lmkll.18db913ec5b35974",
+                "namespace": "university-baseline",
+                "resourceVersion": "724",
+                "uid": "56f7ba03-c92b-4124-a7dc-d0c3b288f83b"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:02Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{payment}",
+                "kind": "Pod",
+                "name": "payment-7479d99b7-lmkll",
+                "namespace": "university-baseline",
+                "resourceVersion": "673",
+                "uid": "3b942377-f7f6-42df-9212-18f5d0da67dc"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:02Z",
+            "message": "Stopping container payment",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:02Z",
+                "name": "payment-7479d99b7-lmkll.18db914e3db087b4",
+                "namespace": "university-baseline",
+                "resourceVersion": "1133",
+                "uid": "589e57b1-5439-4d0e-bd5f-58e2bf3dd9e1"
+            },
+            "reason": "Killing",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "payment-7479d99b7",
+                "namespace": "university-baseline",
+                "resourceVersion": "665",
+                "uid": "704a0155-b8c1-41d3-aca2-b388abb56bf7"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Created pod: payment-7479d99b7-lmkll",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "payment-7479d99b7.18db913e96685e9a",
+                "namespace": "university-baseline",
+                "resourceVersion": "674",
+                "uid": "f4fe6183-1bed-4a40-aa02-58b24e86c122"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:02Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "payment-7479d99b7",
+                "namespace": "university-baseline",
+                "resourceVersion": "732",
+                "uid": "704a0155-b8c1-41d3-aca2-b388abb56bf7"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:02Z",
+            "message": "Created pod: payment-7479d99b7-g745r",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:02Z",
+                "name": "payment-7479d99b7.18db914e3e3d9c8c",
+                "namespace": "university-baseline",
+                "resourceVersion": "1136",
+                "uid": "7949c7f0-4c99-4469-9bcf-452f1289ea7e"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "payment-7479d99b7",
+                "namespace": "university-baseline",
+                "resourceVersion": "2124",
+                "uid": "704a0155-b8c1-41d3-aca2-b388abb56bf7"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Created pod: payment-7479d99b7-d7x5m",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "payment-7479d99b7.18db91e3f41d68a2",
+                "namespace": "university-baseline",
+                "resourceVersion": "2552",
+                "uid": "443d1cf9-6ad3-4c98-8e36-03971a917cda"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "Deployment",
+                "name": "payment",
+                "namespace": "university-baseline",
+                "resourceVersion": "662",
+                "uid": "fb1520b1-b88b-4256-b5a5-bc5206e9ceae"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Scaled up replica set payment-7479d99b7 from 0 to 1",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "payment.18db913e95f208a6",
+                "namespace": "university-baseline",
+                "resourceVersion": "667",
+                "uid": "c1c67684-5721-44b5-ab4a-6d9036a9a862"
+            },
+            "reason": "ScalingReplicaSet",
+            "reportingComponent": "deployment-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "622",
+                "uid": "3bfb65c8-1915-4a28-a92c-b5240d8f5a9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Successfully assigned university-baseline/postgres-0 to university-ft",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "postgres-0.18db913e928d8155",
+                "namespace": "university-baseline",
+                "resourceVersion": "631",
+                "uid": "aedc89e2-102a-441a-8d7a-5edd360efe0a"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "625",
+                "uid": "3bfb65c8-1915-4a28-a92c-b5240d8f5a9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Pulling image \"postgres:17-alpine\"",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "postgres-0.18db913eb1eb40ce",
+                "namespace": "university-baseline",
+                "resourceVersion": "699",
+                "uid": "db34afc9-a260-4e4e-9c3e-31d05f5bd093"
+            },
+            "reason": "Pulling",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:23:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "625",
+                "uid": "3bfb65c8-1915-4a28-a92c-b5240d8f5a9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:23:05Z",
+            "message": "Successfully pulled image \"postgres:17-alpine\" in 10.06s (10.06s including waiting). Image size: 117212703 bytes.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:23:05Z",
+                "name": "postgres-0.18db9141099788d6",
+                "namespace": "university-baseline",
+                "resourceVersion": "749",
+                "uid": "a715acd1-dd39-42d8-93f3-34dd8d36e207"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:23:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "625",
+                "uid": "3bfb65c8-1915-4a28-a92c-b5240d8f5a9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:23:05Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:23:05Z",
+                "name": "postgres-0.18db91410b1a7204",
+                "namespace": "university-baseline",
+                "resourceVersion": "750",
+                "uid": "2f311ab2-51df-45ab-b6e2-db1a31b86bff"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:23:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "625",
+                "uid": "3bfb65c8-1915-4a28-a92c-b5240d8f5a9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:23:05Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:23:05Z",
+                "name": "postgres-0.18db91410ed27d23",
+                "namespace": "university-baseline",
+                "resourceVersion": "751",
+                "uid": "ce1ed4c5-ecd7-4b41-a08f-4c76cce0d7cc"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:23:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "625",
+                "uid": "3bfb65c8-1915-4a28-a92c-b5240d8f5a9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:23:05Z",
+            "message": "Readiness probe failed: /var/run/postgresql:5432 - no response\n",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:23:05Z",
+                "name": "postgres-0.18db9141102ad1d2",
+                "namespace": "university-baseline",
+                "resourceVersion": "756",
+                "uid": "bf06a70b-496e-4e03-8aaa-a57b7c2ce1c7"
+            },
+            "reason": "Unhealthy",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "625",
+                "uid": "3bfb65c8-1915-4a28-a92c-b5240d8f5a9e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:53Z",
+            "message": "Stopping container postgres",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:53Z",
+                "name": "postgres-0.18db915a56b42404",
+                "namespace": "university-baseline",
+                "resourceVersion": "1252",
+                "uid": "e12ed15d-e4f1-4ca1-9c47-06bbbdd3236c"
+            },
+            "reason": "Killing",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:25:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "1302",
+                "uid": "586e75bf-fcf4-4c13-86d3-728f07469977"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:25:05Z",
+            "message": "Successfully assigned university-baseline/postgres-0 to university-ft",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:25:05Z",
+                "name": "postgres-0.18db915cedfbc421",
+                "namespace": "university-baseline",
+                "resourceVersion": "1307",
+                "uid": "4c5aa4ab-f3b3-4c97-b804-e60630519ae8"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:25:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "1303",
+                "uid": "586e75bf-fcf4-4c13-86d3-728f07469977"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:25:05Z",
+            "message": "Container image \"postgres:17-alpine\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:25:05Z",
+                "name": "postgres-0.18db915d0a0b825f",
+                "namespace": "university-baseline",
+                "resourceVersion": "1310",
+                "uid": "df2c6c2e-6630-43aa-a0a1-f4da4cfc5e5b"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:25:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "1303",
+                "uid": "586e75bf-fcf4-4c13-86d3-728f07469977"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:25:05Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:25:05Z",
+                "name": "postgres-0.18db915d0ba75a52",
+                "namespace": "university-baseline",
+                "resourceVersion": "1312",
+                "uid": "2a123468-7ee8-4523-b5c8-1cd25eea6706"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:25:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "1303",
+                "uid": "586e75bf-fcf4-4c13-86d3-728f07469977"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:25:05Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:25:05Z",
+                "name": "postgres-0.18db915d0fa6d777",
+                "namespace": "university-baseline",
+                "resourceVersion": "1314",
+                "uid": "8f0b5750-dbb1-43b4-8921-c215007fd3f7"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:25:05Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{postgres}",
+                "kind": "Pod",
+                "name": "postgres-0",
+                "namespace": "university-baseline",
+                "resourceVersion": "1303",
+                "uid": "586e75bf-fcf4-4c13-86d3-728f07469977"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:25:05Z",
+            "message": "Readiness probe failed: /var/run/postgresql:5432 - no response\n",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:25:05Z",
+                "name": "postgres-0.18db915d1148c513",
+                "namespace": "university-baseline",
+                "resourceVersion": "1318",
+                "uid": "e673cf63-335a-442a-87e0-054269df2d73"
+            },
+            "reason": "Unhealthy",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "StatefulSet",
+                "name": "postgres",
+                "namespace": "university-baseline",
+                "resourceVersion": "617",
+                "uid": "86323364-63b5-408e-810c-b369a068a3f8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:25:05Z",
+            "message": "Create Pod postgres-0 in StatefulSet postgres successful",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "postgres.18db913e923d36d0",
+                "namespace": "university-baseline",
+                "resourceVersion": "1305",
+                "uid": "179f561a-bb09-4100-a9d2-e8417cbb8a40"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "statefulset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "statefulset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:24:53Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "StatefulSet",
+                "name": "postgres",
+                "namespace": "university-baseline",
+                "resourceVersion": "1247",
+                "uid": "86323364-63b5-408e-810c-b369a068a3f8"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:24:53Z",
+            "message": "Delete Pod postgres-0 in StatefulSet postgres successful",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:24:53Z",
+                "name": "postgres.18db915a56a6f0e9",
+                "namespace": "university-baseline",
+                "resourceVersion": "1249",
+                "uid": "3c5123ed-34e1-4697-a7f2-903602d0da36"
+            },
+            "reason": "SuccessfulDelete",
+            "reportingComponent": "statefulset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "statefulset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "683",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Successfully assigned university-baseline/records-894c69779-4v7pd to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "records-894c69779-4v7pd.18db913e9878e5f8",
+                "namespace": "university-baseline",
+                "resourceVersion": "694",
+                "uid": "a3e93640-1fdf-471f-acda-d2a51dbb1eed"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "689",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "records-894c69779-4v7pd.18db913eb3fe6e4a",
+                "namespace": "university-baseline",
+                "resourceVersion": "706",
+                "uid": "f5558fb4-37f5-4283-930d-1ed133488599"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "689",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "records-894c69779-4v7pd.18db913ec20e1e78",
+                "namespace": "university-baseline",
+                "resourceVersion": "713",
+                "uid": "78fae95b-d1a6-489a-bad9-0ae98ee911d6"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "689",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "records-894c69779-4v7pd.18db913ec5b21118",
+                "namespace": "university-baseline",
+                "resourceVersion": "721",
+                "uid": "3aa09e8f-8552-418a-ae7e-31ab53bdfb2e"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:27:24Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "1154",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:27:24Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:27:24Z",
+                "name": "records-894c69779-4v7pd.18db917d63316137",
+                "namespace": "university-baseline",
+                "resourceVersion": "1683",
+                "uid": "02a17a12-8a3b-4239-9254-c04540fd1449"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:04Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:04Z",
+            "message": "Cancelling deletion of Pod university-baseline/records-894c69779-4v7pd",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:04Z",
+                "name": "records-894c69779-4v7pd.18db91bea777263c",
+                "namespace": "university-baseline",
+                "resourceVersion": "2036",
+                "uid": "0e0dc15d-abe6-4633-9b4e-08f0b6e4e598"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:26Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "1681",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:26Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:26Z",
+                "name": "records-894c69779-4v7pd.18db91c3c687b4c4",
+                "namespace": "university-baseline",
+                "resourceVersion": "2109",
+                "uid": "ea53e242-6f42-44bb-be48-1947253fddd3"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "1681",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "records-894c69779-4v7pd.18db91c3d4eff0fd",
+                "namespace": "university-baseline",
+                "resourceVersion": "2138",
+                "uid": "cad83fe4-a23d-4427-95b9-5e0ba4ac0a50"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "1681",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "records-894c69779-4v7pd.18db91c3d8accc8a",
+                "namespace": "university-baseline",
+                "resourceVersion": "2146",
+                "uid": "499f2ea8-af3e-4c52-b54d-89873b423342"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "1681",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "records-894c69779-4v7pd.18db91c3db9042e0",
+                "namespace": "university-baseline",
+                "resourceVersion": "2152",
+                "uid": "064a1478-c272-45d3-be3c-4dcef60f7e58"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-4v7pd",
+                "namespace": "university-baseline",
+                "resourceVersion": "1681",
+                "uid": "3f9d2665-042a-4e33-8262-0eba90ca749e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Stopping container records",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "records-894c69779-4v7pd.18db91e3f437e5a5",
+                "namespace": "university-baseline",
+                "resourceVersion": "2557",
+                "uid": "2f071eb8-19e8-45c9-b916-a6f2f2d8d3f6"
+            },
+            "reason": "Killing",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2555",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Successfully assigned university-baseline/records-894c69779-6zxhb to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "records-894c69779-6zxhb.18db91e3f56ddfe8",
+                "namespace": "university-baseline",
+                "resourceVersion": "2575",
+                "uid": "c2489cb4-e085-4864-94ec-76e0b6b3617a"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2566",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "records-894c69779-6zxhb.18db91e4104ed619",
+                "namespace": "university-baseline",
+                "resourceVersion": "2694",
+                "uid": "2cb8bda2-d401-4233-a1b3-0bd9e148a903"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2566",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "records-894c69779-6zxhb.18db91e4146950e8",
+                "namespace": "university-baseline",
+                "resourceVersion": "2703",
+                "uid": "76bf14ff-cf3f-483f-99f8-ab8b4bbda277"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2566",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "records-894c69779-6zxhb.18db91e4177e5562",
+                "namespace": "university-baseline",
+                "resourceVersion": "2712",
+                "uid": "9f3fd23f-426a-4c0b-b5a8-5d3a46860b75"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:49Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2713",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:25Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:49Z",
+                "name": "records-894c69779-6zxhb.18db91f31116bb2b",
+                "namespace": "university-baseline",
+                "resourceVersion": "3281",
+                "uid": "bdca4cd4-9adb-4463-b298-7585b9f08097"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:52Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2942",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:52Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:52Z",
+                "name": "records-894c69779-6zxhb.18db91f3c2a7f989",
+                "namespace": "university-baseline",
+                "resourceVersion": "3042",
+                "uid": "034900fa-a2c9-4a2a-97ae-115f08827351"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2942",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "records-894c69779-6zxhb.18db91f3cc2f6afc",
+                "namespace": "university-baseline",
+                "resourceVersion": "3067",
+                "uid": "83d81d3e-c4e6-4330-b7a7-4b572e569ee7"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2942",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "records-894c69779-6zxhb.18db91f3cfbae530",
+                "namespace": "university-baseline",
+                "resourceVersion": "3080",
+                "uid": "b3cf1d7b-34d7-4968-a4e1-0c2f83610611"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:53Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "2942",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:53Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:53Z",
+                "name": "records-894c69779-6zxhb.18db91f3d25a6433",
+                "namespace": "university-baseline",
+                "resourceVersion": "3088",
+                "uid": "566edae7-25d2-4e44-b6e0-abe673c6512c"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:35Z",
+            "message": "Cancelling deletion of Pod university-baseline/records-894c69779-6zxhb",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:55Z",
+                "name": "records-894c69779-6zxhb.18db91f43dcc553d",
+                "namespace": "university-baseline",
+                "resourceVersion": "3474",
+                "uid": "817d9203-f49f-45ec-b43a-0af39e8cb99a"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "3272",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "records-894c69779-6zxhb.18db920b09df92fe",
+                "namespace": "university-baseline",
+                "resourceVersion": "3390",
+                "uid": "cad3fc27-68f2-47d5-b56d-72fd97d9f0e0"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:33Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "3272",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:33Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:33Z",
+                "name": "records-894c69779-6zxhb.18db920b16518b2c",
+                "namespace": "university-baseline",
+                "resourceVersion": "3418",
+                "uid": "99360b87-ffa9-423c-853c-f96a95aa21de"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:33Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "3272",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:33Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:33Z",
+                "name": "records-894c69779-6zxhb.18db920b1973169f",
+                "namespace": "university-baseline",
+                "resourceVersion": "3432",
+                "uid": "1adf8f81-c056-43f6-99b6-97da4009f8e2"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:33Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{records}",
+                "kind": "Pod",
+                "name": "records-894c69779-6zxhb",
+                "namespace": "university-baseline",
+                "resourceVersion": "3272",
+                "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:33Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:33Z",
+                "name": "records-894c69779-6zxhb.18db920b1c92f5da",
+                "namespace": "university-baseline",
+                "resourceVersion": "3441",
+                "uid": "9fc4e340-67a1-4394-aad4-167f6a9167e5"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "records-894c69779",
+                "namespace": "university-baseline",
+                "resourceVersion": "682",
+                "uid": "250136cc-a4f3-47f1-9c01-f54360a91620"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Created pod: records-894c69779-4v7pd",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "records-894c69779.18db913e982b8123",
+                "namespace": "university-baseline",
+                "resourceVersion": "688",
+                "uid": "3b8eb76f-507c-43f4-943e-a3215daead21"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "records-894c69779",
+                "namespace": "university-baseline",
+                "resourceVersion": "2165",
+                "uid": "250136cc-a4f3-47f1-9c01-f54360a91620"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Created pod: records-894c69779-6zxhb",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "records-894c69779.18db91e3f4c2ed13",
+                "namespace": "university-baseline",
+                "resourceVersion": "2562",
+                "uid": "9ff11027-c652-42b7-97f7-ec3ec1ae5830"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "Deployment",
+                "name": "records",
+                "namespace": "university-baseline",
+                "resourceVersion": "678",
+                "uid": "e58ac3eb-30a3-499f-9ca8-393b4d9c0f87"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Scaled up replica set records-894c69779 from 0 to 1",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "records.18db913e979b4dc3",
+                "namespace": "university-baseline",
+                "resourceVersion": "684",
+                "uid": "3a034848-d024-4704-bce6-59df86d68c84"
+            },
+            "reason": "ScalingReplicaSet",
+            "reportingComponent": "deployment-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "650",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Successfully assigned university-baseline/student-7fc4cfcff6-rbqtw to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db913e952556d9",
+                "namespace": "university-baseline",
+                "resourceVersion": "660",
+                "uid": "f4aa3264-50e1-4975-9339-9c77e1d80725"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "656",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db913eb213b203",
+                "namespace": "university-baseline",
+                "resourceVersion": "702",
+                "uid": "e43f822d-9d83-4dfc-9bf0-668b35fa4eb6"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "656",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db913ec0723b99",
+                "namespace": "university-baseline",
+                "resourceVersion": "710",
+                "uid": "4b6947ab-c86a-48cd-be4e-52d1a5a6621f"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "656",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:55Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:55Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db913ec4f7fe37",
+                "namespace": "university-baseline",
+                "resourceVersion": "715",
+                "uid": "2f3f3aba-ad4b-4f79-b0d8-dd29a678dbc9"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:27:24Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "1183",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:27:24Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:27:24Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db917d62615e61",
+                "namespace": "university-baseline",
+                "resourceVersion": "1672",
+                "uid": "8d1456b8-d345-47b3-a992-4a07987b8a7e"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:04Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:04Z",
+            "message": "Cancelling deletion of Pod university-baseline/student-7fc4cfcff6-rbqtw",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:04Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db91bea776f62b",
+                "namespace": "university-baseline",
+                "resourceVersion": "2034",
+                "uid": "e78bb3ac-c301-4f1a-9d28-249ad8568d25"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:26Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "1670",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:26Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:26Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db91c3c711be0e",
+                "namespace": "university-baseline",
+                "resourceVersion": "2111",
+                "uid": "85c160a2-fd3b-4475-a5ab-3a869a9e76c0"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "1670",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db91c3d49c53d2",
+                "namespace": "university-baseline",
+                "resourceVersion": "2137",
+                "uid": "178211e7-fc47-4891-a503-a797fe7bce49"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "1670",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db91c3d878b23b",
+                "namespace": "university-baseline",
+                "resourceVersion": "2145",
+                "uid": "58a57b9d-589e-4e7c-8d32-466cff9ac2a2"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:32:27Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "1670",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:32:27Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:32:27Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db91c3db95af9d",
+                "namespace": "university-baseline",
+                "resourceVersion": "2156",
+                "uid": "041ac125-087c-4337-bf5b-7a247a40996d"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-rbqtw",
+                "namespace": "university-baseline",
+                "resourceVersion": "1670",
+                "uid": "362367e0-eafd-4d3e-99f0-716701ac6a46"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Stopping container student",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "student-7fc4cfcff6-rbqtw.18db91e3f51e5f94",
+                "namespace": "university-baseline",
+                "resourceVersion": "2571",
+                "uid": "aa729d45-942e-4a97-8fb0-356546494dfa"
+            },
+            "reason": "Killing",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2570",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Successfully assigned university-baseline/student-7fc4cfcff6-trdxw to university-ft-m02",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91e3f601be1a",
+                "namespace": "university-baseline",
+                "resourceVersion": "2581",
+                "uid": "1d22aa71-4bda-436d-b6e4-117ab77b2632"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2576",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91e410ec82d2",
+                "namespace": "university-baseline",
+                "resourceVersion": "2697",
+                "uid": "3943eaab-8333-4957-b6b3-b28bb71c294b"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2576",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91e414b07e81",
+                "namespace": "university-baseline",
+                "resourceVersion": "2704",
+                "uid": "273d94b0-6820-4db9-8987-1eca6fd4e1e8"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2576",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91e4177d2c5a",
+                "namespace": "university-baseline",
+                "resourceVersion": "2708",
+                "uid": "64be000b-1a41-490b-8cf6-353636f1eae1"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:49Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2718",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:25Z",
+            "message": "Node is not ready",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:49Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91f30efcefa9",
+                "namespace": "university-baseline",
+                "resourceVersion": "3317",
+                "uid": "afe468eb-80fa-4b50-b7ab-07a9469e70c6"
+            },
+            "reason": "NodeNotReady",
+            "reportingComponent": "node-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "node-controller"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:52Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2918",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:52Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:52Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91f3b14d5d48",
+                "namespace": "university-baseline",
+                "resourceVersion": "3017",
+                "uid": "6aa4edea-b164-4d23-83c1-b1108caa8406"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:52Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2918",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:52Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:52Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91f3babd6a0b",
+                "namespace": "university-baseline",
+                "resourceVersion": "3020",
+                "uid": "192f7f61-8e0d-49fc-8935-1210bf23e391"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:52Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2918",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:52Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:52Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91f3bc463406",
+                "namespace": "university-baseline",
+                "resourceVersion": "3024",
+                "uid": "d6197b9a-c308-4017-b40e-63587b8f68c5"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:52Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "2918",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:35:52Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:52Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91f3bfe99300",
+                "namespace": "university-baseline",
+                "resourceVersion": "3035",
+                "uid": "304e79f2-f6b6-4ffd-a842-31f01168203b"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:35:55Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:35Z",
+            "message": "Cancelling deletion of Pod university-baseline/student-7fc4cfcff6-trdxw",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:35:55Z",
+                "name": "student-7fc4cfcff6-trdxw.18db91f43dcbf86b",
+                "namespace": "university-baseline",
+                "resourceVersion": "3471",
+                "uid": "78cbaa72-d435-4751-9edd-8a1a082be6f8"
+            },
+            "reason": "TaintManagerEviction",
+            "reportingComponent": "taint-eviction-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "taint-eviction-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:32Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "3309",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:32Z",
+            "message": "Pod sandbox changed, it will be killed and re-created.",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:32Z",
+                "name": "student-7fc4cfcff6-trdxw.18db920b0ab67f89",
+                "namespace": "university-baseline",
+                "resourceVersion": "3391",
+                "uid": "31ff1cf4-cf73-4ba7-8544-3bd84a03d099"
+            },
+            "reason": "SandboxChanged",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:33Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "3309",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:33Z",
+            "message": "Container image \"university:local\" already present on machine and can be accessed by the pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:33Z",
+                "name": "student-7fc4cfcff6-trdxw.18db920b166bac23",
+                "namespace": "university-baseline",
+                "resourceVersion": "3421",
+                "uid": "45b9e25c-eac9-43cc-986e-07bc1516247d"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:33Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "3309",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:33Z",
+            "message": "Container created",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:33Z",
+                "name": "student-7fc4cfcff6-trdxw.18db920b19667b8e",
+                "namespace": "university-baseline",
+                "resourceVersion": "3428",
+                "uid": "3e43e9cc-2655-4321-8b27-0c9aea95b7f7"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:37:33Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{student}",
+                "kind": "Pod",
+                "name": "student-7fc4cfcff6-trdxw",
+                "namespace": "university-baseline",
+                "resourceVersion": "3309",
+                "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:37:33Z",
+            "message": "Container started",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:37:33Z",
+                "name": "student-7fc4cfcff6-trdxw.18db920b1d6a1606",
+                "namespace": "university-baseline",
+                "resourceVersion": "3448",
+                "uid": "4cb8a32a-53d9-49e2-a00b-da6f52b0448b"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "university-ft-m02",
+            "source": {
+                "component": "kubelet",
+                "host": "university-ft-m02"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "student-7fc4cfcff6",
+                "namespace": "university-baseline",
+                "resourceVersion": "648",
+                "uid": "15dae7a8-eb57-4e9b-a7bb-ce3f5e76876b"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Created pod: student-7fc4cfcff6-rbqtw",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "student-7fc4cfcff6.18db913e94d81009",
+                "namespace": "university-baseline",
+                "resourceVersion": "654",
+                "uid": "1458b869-85e7-4442-afd5-21e117954a98"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:34:45Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "student-7fc4cfcff6",
+                "namespace": "university-baseline",
+                "resourceVersion": "2169",
+                "uid": "15dae7a8-eb57-4e9b-a7bb-ce3f5e76876b"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:34:45Z",
+            "message": "Created pod: student-7fc4cfcff6-trdxw",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:34:45Z",
+                "name": "student-7fc4cfcff6.18db91e3f57e08ac",
+                "namespace": "university-baseline",
+                "resourceVersion": "2577",
+                "uid": "44f72f13-4baf-4475-8c1f-c5aad4ecfcf3"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-10-05T07:22:54Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "Deployment",
+                "name": "student",
+                "namespace": "university-baseline",
+                "resourceVersion": "646",
+                "uid": "c88fc83c-8bba-4ab6-b355-fb84d9ebfe4e"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-10-05T07:22:54Z",
+            "message": "Scaled up replica set student-7fc4cfcff6 from 0 to 1",
+            "metadata": {
+                "creationTimestamp": "2026-10-05T07:22:54Z",
+                "name": "student.18db913e948c5577",
+                "namespace": "university-baseline",
+                "resourceVersion": "649",
+                "uid": "47294dbc-d9c5-496e-bc37-3d300b40887f"
+            },
+            "reason": "ScalingReplicaSet",
+            "reportingComponent": "deployment-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "type": "Normal"
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

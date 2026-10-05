@@ -1,0 +1,4 @@
+[pod/student-bc46d9646-mds24/student] {"time":"2026-10-05T07:23:12.867676811Z","level":"INFO","msg":"service started","role":"student","fault_tolerant":true}
+[pod/student-bc46d9646-mds24/student] {"time":"2026-10-05T07:25:17.932310996Z","level":"INFO","msg":"request","role":"student","method":"POST","path":"/students","status":201,"duration_ms":2}
+[pod/student-bc46d9646-vnm4r/student] {"time":"2026-10-05T07:23:10.012160309Z","level":"INFO","msg":"service started","role":"student","fault_tolerant":true}
+[pod/student-bc46d9646-vnm4r/student] {"time":"2026-10-05T07:24:24.761112985Z","level":"INFO","msg":"request","role":"student","method":"POST","path":"/students","status":201,"duration_ms":4}

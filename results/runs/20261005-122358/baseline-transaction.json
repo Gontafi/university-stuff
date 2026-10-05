@@ -1,0 +1,2767 @@
+{
+  "environment": "minikube",
+  "mode": "baseline",
+  "scenario": "transaction",
+  "utc": "2026-10-05T07:38:57.925089+00:00",
+  "student_id": 6,
+  "duration_s": 29.10275189899994,
+  "injected_at_s": 3.0743905589997667,
+  "cleared_at_s": 17.102006732000063,
+  "observations": {
+    "system_state_before": {
+      "apiVersion": "v1",
+      "items": [
+        {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "metadata": {
+            "creationTimestamp": "2026-10-05T07:34:45Z",
+            "generateName": "gateway-fd59d8695-",
+            "generation": 1,
+            "labels": {
+              "app": "gateway",
+              "pod-template-hash": "fd59d8695"
+            },
+            "name": "gateway-fd59d8695-kjstg",
+            "namespace": "university-baseline",
+            "ownerReferences": [
+              {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "ReplicaSet",
+                "name": "gateway-fd59d8695",
+                "uid": "30374441-4cb5-4275-a342-ea82b0bd0990"
+              }
+            ],
+            "resourceVersion": "3399",
+            "uid": "c66ee341-c61c-4c03-9ca0-248b448af680"
+          },
+          "spec": {
+            "containers": [
+              {
+                "env": [
+                  {
+                    "name": "ROLE",
+                    "value": "gateway"
+                  },
+                  {
+                    "name": "MODE",
+                    "value": "baseline"
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "secretRef": {
+                      "name": "university"
+                    }
+                  }
+                ],
+                "image": "university:local",
+                "imagePullPolicy": "Never",
+                "name": "gateway",
+                "ports": [
+                  {
+                    "containerPort": 8080,
+                    "protocol": "TCP"
+                  }
+                ],
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  },
+                  "readOnlyRootFilesystem": true
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-6lh24",
+                    "readOnly": true
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "enableServiceLinks": true,
+            "nodeName": "university-ft-m02",
+            "nodeSelector": {
+              "kubernetes.io/hostname": "university-ft-m02"
+            },
+            "preemptionPolicy": "PreemptLowerPriority",
+            "priority": 0,
+            "restartPolicy": "Always",
+            "schedulerName": "default-scheduler",
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001
+            },
+            "serviceAccount": "default",
+            "serviceAccountName": "default",
+            "terminationGracePeriodSeconds": 8,
+            "tolerations": [
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              },
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              }
+            ],
+            "volumes": [
+              {
+                "name": "kube-api-access-6lh24",
+                "projected": {
+                  "defaultMode": 420,
+                  "sources": [
+                    {
+                      "serviceAccountToken": {
+                        "expirationSeconds": 3607,
+                        "path": "token"
+                      }
+                    },
+                    {
+                      "configMap": {
+                        "items": [
+                          {
+                            "key": "ca.crt",
+                            "path": "ca.crt"
+                          }
+                        ],
+                        "name": "kube-root-ca.crt"
+                      }
+                    },
+                    {
+                      "downwardAPI": {
+                        "items": [
+                          {
+                            "fieldRef": {
+                              "apiVersion": "v1",
+                              "fieldPath": "metadata.namespace"
+                            },
+                            "path": "namespace"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "status": {
+            "allocatedResources": {
+              "cpu": "50m",
+              "memory": "32Mi"
+            },
+            "conditions": [
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:32Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:32Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Ready"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:32Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "ContainersReady"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+              }
+            ],
+            "containerStatuses": [
+              {
+                "allocatedResources": {
+                  "cpu": "50m",
+                  "memory": "32Mi"
+                },
+                "containerID": "containerd://2a3317c77211041908433c5582a27be0e15e10478496789639becbe3fa8be82b",
+                "image": "docker.io/library/university:local",
+                "imageID": "sha256:4837441e01b0d68508272e346c7dddf42e8061a7692056b2274adc75ea8d6f54",
+                "lastState": {
+                  "terminated": {
+                    "containerID": "containerd://2ca0a733bd8e3234231aeaee495968ab37671248dc01b86bba86b82de1975506",
+                    "exitCode": 255,
+                    "finishedAt": "2026-10-05T07:37:30Z",
+                    "reason": "Unknown",
+                    "startedAt": "2026-10-05T07:35:53Z"
+                  }
+                },
+                "name": "gateway",
+                "ready": true,
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "restartCount": 2,
+                "started": true,
+                "state": {
+                  "running": {
+                    "startedAt": "2026-10-05T07:37:32Z"
+                  }
+                },
+                "user": {
+                  "linux": {
+                    "gid": 10001,
+                    "supplementalGroups": [
+                      10001
+                    ],
+                    "uid": 10001
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-6lh24",
+                    "readOnly": true,
+                    "recursiveReadOnly": "Disabled"
+                  }
+                ]
+              }
+            ],
+            "hostIP": "192.168.58.3",
+            "hostIPs": [
+              {
+                "ip": "192.168.58.3"
+              }
+            ],
+            "observedGeneration": 1,
+            "phase": "Running",
+            "podIP": "10.244.1.2",
+            "podIPs": [
+              {
+                "ip": "10.244.1.2"
+              }
+            ],
+            "qosClass": "Burstable",
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "128Mi"
+              },
+              "requests": {
+                "cpu": "28m",
+                "memory": "32Mi"
+              }
+            },
+            "startTime": "2026-10-05T07:34:45Z"
+          }
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "metadata": {
+            "creationTimestamp": "2026-10-05T07:34:45Z",
+            "generateName": "payment-7479d99b7-",
+            "generation": 1,
+            "labels": {
+              "app": "payment",
+              "pod-template-hash": "7479d99b7"
+            },
+            "name": "payment-7479d99b7-d7x5m",
+            "namespace": "university-baseline",
+            "ownerReferences": [
+              {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "ReplicaSet",
+                "name": "payment-7479d99b7",
+                "uid": "704a0155-b8c1-41d3-aca2-b388abb56bf7"
+              }
+            ],
+            "resourceVersion": "3395",
+            "uid": "c682a7e6-e897-4a3e-9096-c2d7b122a727"
+          },
+          "spec": {
+            "containers": [
+              {
+                "env": [
+                  {
+                    "name": "ROLE",
+                    "value": "payment"
+                  },
+                  {
+                    "name": "MODE",
+                    "value": "baseline"
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "secretRef": {
+                      "name": "university"
+                    }
+                  }
+                ],
+                "image": "university:local",
+                "imagePullPolicy": "Never",
+                "name": "payment",
+                "ports": [
+                  {
+                    "containerPort": 8080,
+                    "protocol": "TCP"
+                  }
+                ],
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  },
+                  "readOnlyRootFilesystem": true
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-n8rnk",
+                    "readOnly": true
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "enableServiceLinks": true,
+            "nodeName": "university-ft-m02",
+            "nodeSelector": {
+              "kubernetes.io/hostname": "university-ft-m02"
+            },
+            "preemptionPolicy": "PreemptLowerPriority",
+            "priority": 0,
+            "restartPolicy": "Always",
+            "schedulerName": "default-scheduler",
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001
+            },
+            "serviceAccount": "default",
+            "serviceAccountName": "default",
+            "terminationGracePeriodSeconds": 8,
+            "tolerations": [
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              },
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              }
+            ],
+            "volumes": [
+              {
+                "name": "kube-api-access-n8rnk",
+                "projected": {
+                  "defaultMode": 420,
+                  "sources": [
+                    {
+                      "serviceAccountToken": {
+                        "expirationSeconds": 3607,
+                        "path": "token"
+                      }
+                    },
+                    {
+                      "configMap": {
+                        "items": [
+                          {
+                            "key": "ca.crt",
+                            "path": "ca.crt"
+                          }
+                        ],
+                        "name": "kube-root-ca.crt"
+                      }
+                    },
+                    {
+                      "downwardAPI": {
+                        "items": [
+                          {
+                            "fieldRef": {
+                              "apiVersion": "v1",
+                              "fieldPath": "metadata.namespace"
+                            },
+                            "path": "namespace"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "status": {
+            "allocatedResources": {
+              "cpu": "50m",
+              "memory": "32Mi"
+            },
+            "conditions": [
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:32Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:32Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Ready"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:32Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "ContainersReady"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+              }
+            ],
+            "containerStatuses": [
+              {
+                "allocatedResources": {
+                  "cpu": "50m",
+                  "memory": "32Mi"
+                },
+                "containerID": "containerd://8b5756315721ee1e5800c14919d32933818b8579c35b47fdf1a5cab5ddd49f7c",
+                "image": "docker.io/library/university:local",
+                "imageID": "sha256:4837441e01b0d68508272e346c7dddf42e8061a7692056b2274adc75ea8d6f54",
+                "lastState": {
+                  "terminated": {
+                    "containerID": "containerd://f5efad8242ee7ecb13e0f6fc5f794d1a2158d05634659067b4ba9601b5c90d02",
+                    "exitCode": 255,
+                    "finishedAt": "2026-10-05T07:37:30Z",
+                    "reason": "Unknown",
+                    "startedAt": "2026-10-05T07:35:53Z"
+                  }
+                },
+                "name": "payment",
+                "ready": true,
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "restartCount": 2,
+                "started": true,
+                "state": {
+                  "running": {
+                    "startedAt": "2026-10-05T07:37:32Z"
+                  }
+                },
+                "user": {
+                  "linux": {
+                    "gid": 10001,
+                    "supplementalGroups": [
+                      10001
+                    ],
+                    "uid": 10001
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-n8rnk",
+                    "readOnly": true,
+                    "recursiveReadOnly": "Disabled"
+                  }
+                ]
+              }
+            ],
+            "hostIP": "192.168.58.3",
+            "hostIPs": [
+              {
+                "ip": "192.168.58.3"
+              }
+            ],
+            "observedGeneration": 1,
+            "phase": "Running",
+            "podIP": "10.244.1.4",
+            "podIPs": [
+              {
+                "ip": "10.244.1.4"
+              }
+            ],
+            "qosClass": "Burstable",
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "128Mi"
+              },
+              "requests": {
+                "cpu": "28m",
+                "memory": "32Mi"
+              }
+            },
+            "startTime": "2026-10-05T07:34:45Z"
+          }
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "metadata": {
+            "creationTimestamp": "2026-10-05T07:25:05Z",
+            "generateName": "postgres-",
+            "generation": 1,
+            "labels": {
+              "app": "postgres",
+              "apps.kubernetes.io/pod-index": "0",
+              "controller-revision-hash": "postgres-f7f468957",
+              "statefulset.kubernetes.io/pod-name": "postgres-0"
+            },
+            "name": "postgres-0",
+            "namespace": "university-baseline",
+            "ownerReferences": [
+              {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "StatefulSet",
+                "name": "postgres",
+                "uid": "86323364-63b5-408e-810c-b369a068a3f8"
+              }
+            ],
+            "resourceVersion": "1324",
+            "uid": "586e75bf-fcf4-4c13-86d3-728f07469977"
+          },
+          "spec": {
+            "containers": [
+              {
+                "env": [
+                  {
+                    "name": "POSTGRES_USER",
+                    "value": "university"
+                  },
+                  {
+                    "name": "POSTGRES_DB",
+                    "value": "university"
+                  },
+                  {
+                    "name": "POSTGRES_PASSWORD",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "key": "POSTGRES_PASSWORD",
+                        "name": "university"
+                      }
+                    }
+                  },
+                  {
+                    "name": "PGDATA",
+                    "value": "/var/lib/postgresql/data/pgdata"
+                  }
+                ],
+                "image": "postgres:17-alpine",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "postgres",
+                "ports": [
+                  {
+                    "containerPort": 5432,
+                    "protocol": "TCP"
+                  }
+                ],
+                "readinessProbe": {
+                  "exec": {
+                    "command": [
+                      "pg_isready",
+                      "-U",
+                      "university"
+                    ]
+                  },
+                  "failureThreshold": 3,
+                  "periodSeconds": 2,
+                  "successThreshold": 1,
+                  "timeoutSeconds": 1
+                },
+                "resources": {
+                  "limits": {
+                    "cpu": "1",
+                    "memory": "384Mi"
+                  },
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "128Mi"
+                  }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/lib/postgresql/data",
+                    "name": "data"
+                  },
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-wvpl2",
+                    "readOnly": true
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "enableServiceLinks": true,
+            "hostname": "postgres-0",
+            "nodeName": "university-ft",
+            "nodeSelector": {
+              "kubernetes.io/hostname": "university-ft"
+            },
+            "preemptionPolicy": "PreemptLowerPriority",
+            "priority": 0,
+            "restartPolicy": "Always",
+            "schedulerName": "default-scheduler",
+            "securityContext": {},
+            "serviceAccount": "default",
+            "serviceAccountName": "default",
+            "subdomain": "postgres",
+            "terminationGracePeriodSeconds": 30,
+            "tolerations": [
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              },
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              }
+            ],
+            "volumes": [
+              {
+                "name": "data",
+                "persistentVolumeClaim": {
+                  "claimName": "postgres-data"
+                }
+              },
+              {
+                "name": "kube-api-access-wvpl2",
+                "projected": {
+                  "defaultMode": 420,
+                  "sources": [
+                    {
+                      "serviceAccountToken": {
+                        "expirationSeconds": 3607,
+                        "path": "token"
+                      }
+                    },
+                    {
+                      "configMap": {
+                        "items": [
+                          {
+                            "key": "ca.crt",
+                            "path": "ca.crt"
+                          }
+                        ],
+                        "name": "kube-root-ca.crt"
+                      }
+                    },
+                    {
+                      "downwardAPI": {
+                        "items": [
+                          {
+                            "fieldRef": {
+                              "apiVersion": "v1",
+                              "fieldPath": "metadata.namespace"
+                            },
+                            "path": "namespace"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "status": {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "128Mi"
+            },
+            "conditions": [
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:25:05Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:25:05Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:25:06Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Ready"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:25:06Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "ContainersReady"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:25:05Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+              }
+            ],
+            "containerStatuses": [
+              {
+                "allocatedResources": {
+                  "cpu": "100m",
+                  "memory": "128Mi"
+                },
+                "containerID": "containerd://82d7d67578bcf9d4fc401b7e7c412251069411017b0ac9336675d01002150069",
+                "image": "docker.io/library/postgres:17-alpine",
+                "imageID": "docker.io/library/postgres@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24",
+                "lastState": {},
+                "name": "postgres",
+                "ready": true,
+                "resources": {
+                  "limits": {
+                    "cpu": "1",
+                    "memory": "384Mi"
+                  },
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "128Mi"
+                  }
+                },
+                "restartCount": 0,
+                "started": true,
+                "state": {
+                  "running": {
+                    "startedAt": "2026-10-05T07:25:05Z"
+                  }
+                },
+                "user": {
+                  "linux": {
+                    "gid": 0,
+                    "supplementalGroups": [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      6,
+                      10,
+                      11,
+                      20,
+                      26,
+                      27
+                    ],
+                    "uid": 0
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/lib/postgresql/data",
+                    "name": "data"
+                  },
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-wvpl2",
+                    "readOnly": true,
+                    "recursiveReadOnly": "Disabled"
+                  }
+                ]
+              }
+            ],
+            "hostIP": "192.168.58.2",
+            "hostIPs": [
+              {
+                "ip": "192.168.58.2"
+              }
+            ],
+            "observedGeneration": 1,
+            "phase": "Running",
+            "podIP": "10.244.0.5",
+            "podIPs": [
+              {
+                "ip": "10.244.0.5"
+              }
+            ],
+            "qosClass": "Burstable",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "384Mi"
+              },
+              "requests": {
+                "cpu": "79m",
+                "memory": "128Mi"
+              }
+            },
+            "startTime": "2026-10-05T07:25:05Z"
+          }
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "metadata": {
+            "creationTimestamp": "2026-10-05T07:34:45Z",
+            "generateName": "records-894c69779-",
+            "generation": 1,
+            "labels": {
+              "app": "records",
+              "pod-template-hash": "894c69779"
+            },
+            "name": "records-894c69779-6zxhb",
+            "namespace": "university-baseline",
+            "ownerReferences": [
+              {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "ReplicaSet",
+                "name": "records-894c69779",
+                "uid": "250136cc-a4f3-47f1-9c01-f54360a91620"
+              }
+            ],
+            "resourceVersion": "3443",
+            "uid": "4756af58-c919-45b0-a86e-d07ab7f4fbf5"
+          },
+          "spec": {
+            "containers": [
+              {
+                "env": [
+                  {
+                    "name": "ROLE",
+                    "value": "records"
+                  },
+                  {
+                    "name": "MODE",
+                    "value": "baseline"
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "secretRef": {
+                      "name": "university"
+                    }
+                  }
+                ],
+                "image": "university:local",
+                "imagePullPolicy": "Never",
+                "name": "records",
+                "ports": [
+                  {
+                    "containerPort": 8080,
+                    "protocol": "TCP"
+                  }
+                ],
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  },
+                  "readOnlyRootFilesystem": true
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-4bnzl",
+                    "readOnly": true
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "enableServiceLinks": true,
+            "nodeName": "university-ft-m02",
+            "nodeSelector": {
+              "kubernetes.io/hostname": "university-ft-m02"
+            },
+            "preemptionPolicy": "PreemptLowerPriority",
+            "priority": 0,
+            "restartPolicy": "Always",
+            "schedulerName": "default-scheduler",
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001
+            },
+            "serviceAccount": "default",
+            "serviceAccountName": "default",
+            "terminationGracePeriodSeconds": 8,
+            "tolerations": [
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              },
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              }
+            ],
+            "volumes": [
+              {
+                "name": "kube-api-access-4bnzl",
+                "projected": {
+                  "defaultMode": 420,
+                  "sources": [
+                    {
+                      "serviceAccountToken": {
+                        "expirationSeconds": 3607,
+                        "path": "token"
+                      }
+                    },
+                    {
+                      "configMap": {
+                        "items": [
+                          {
+                            "key": "ca.crt",
+                            "path": "ca.crt"
+                          }
+                        ],
+                        "name": "kube-root-ca.crt"
+                      }
+                    },
+                    {
+                      "downwardAPI": {
+                        "items": [
+                          {
+                            "fieldRef": {
+                              "apiVersion": "v1",
+                              "fieldPath": "metadata.namespace"
+                            },
+                            "path": "namespace"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "status": {
+            "allocatedResources": {
+              "cpu": "50m",
+              "memory": "32Mi"
+            },
+            "conditions": [
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:33Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:33Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Ready"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:33Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "ContainersReady"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+              }
+            ],
+            "containerStatuses": [
+              {
+                "allocatedResources": {
+                  "cpu": "50m",
+                  "memory": "32Mi"
+                },
+                "containerID": "containerd://2674f69d42ec35d1cb6f436c9763f3c60ef0ec33c01acfc3171e85aa96df45d3",
+                "image": "docker.io/library/university:local",
+                "imageID": "sha256:4837441e01b0d68508272e346c7dddf42e8061a7692056b2274adc75ea8d6f54",
+                "lastState": {
+                  "terminated": {
+                    "containerID": "containerd://a0de0bcb63428873568ae64e4bf9b94c6ed3dfe9482e6c4a7c1dec56023b630b",
+                    "exitCode": 255,
+                    "finishedAt": "2026-10-05T07:37:30Z",
+                    "reason": "Unknown",
+                    "startedAt": "2026-10-05T07:35:53Z"
+                  }
+                },
+                "name": "records",
+                "ready": true,
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "restartCount": 2,
+                "started": true,
+                "state": {
+                  "running": {
+                    "startedAt": "2026-10-05T07:37:33Z"
+                  }
+                },
+                "user": {
+                  "linux": {
+                    "gid": 10001,
+                    "supplementalGroups": [
+                      10001
+                    ],
+                    "uid": 10001
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-4bnzl",
+                    "readOnly": true,
+                    "recursiveReadOnly": "Disabled"
+                  }
+                ]
+              }
+            ],
+            "hostIP": "192.168.58.3",
+            "hostIPs": [
+              {
+                "ip": "192.168.58.3"
+              }
+            ],
+            "observedGeneration": 1,
+            "phase": "Running",
+            "podIP": "10.244.1.8",
+            "podIPs": [
+              {
+                "ip": "10.244.1.8"
+              }
+            ],
+            "qosClass": "Burstable",
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "128Mi"
+              },
+              "requests": {
+                "cpu": "28m",
+                "memory": "32Mi"
+              }
+            },
+            "startTime": "2026-10-05T07:34:45Z"
+          }
+        },
+        {
+          "apiVersion": "v1",
+          "kind": "Pod",
+          "metadata": {
+            "creationTimestamp": "2026-10-05T07:34:45Z",
+            "generateName": "student-7fc4cfcff6-",
+            "generation": 1,
+            "labels": {
+              "app": "student",
+              "pod-template-hash": "7fc4cfcff6"
+            },
+            "name": "student-7fc4cfcff6-trdxw",
+            "namespace": "university-baseline",
+            "ownerReferences": [
+              {
+                "apiVersion": "apps/v1",
+                "blockOwnerDeletion": true,
+                "controller": true,
+                "kind": "ReplicaSet",
+                "name": "student-7fc4cfcff6",
+                "uid": "15dae7a8-eb57-4e9b-a7bb-ce3f5e76876b"
+              }
+            ],
+            "resourceVersion": "3452",
+            "uid": "9039a7f4-7410-4552-a6be-b713f99f0514"
+          },
+          "spec": {
+            "containers": [
+              {
+                "env": [
+                  {
+                    "name": "ROLE",
+                    "value": "student"
+                  },
+                  {
+                    "name": "MODE",
+                    "value": "baseline"
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "secretRef": {
+                      "name": "university"
+                    }
+                  }
+                ],
+                "image": "university:local",
+                "imagePullPolicy": "Never",
+                "name": "student",
+                "ports": [
+                  {
+                    "containerPort": 8080,
+                    "protocol": "TCP"
+                  }
+                ],
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  },
+                  "readOnlyRootFilesystem": true
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-hprdm",
+                    "readOnly": true
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "enableServiceLinks": true,
+            "nodeName": "university-ft-m02",
+            "nodeSelector": {
+              "kubernetes.io/hostname": "university-ft-m02"
+            },
+            "preemptionPolicy": "PreemptLowerPriority",
+            "priority": 0,
+            "restartPolicy": "Always",
+            "schedulerName": "default-scheduler",
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001
+            },
+            "serviceAccount": "default",
+            "serviceAccountName": "default",
+            "terminationGracePeriodSeconds": 8,
+            "tolerations": [
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              },
+              {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+              }
+            ],
+            "volumes": [
+              {
+                "name": "kube-api-access-hprdm",
+                "projected": {
+                  "defaultMode": 420,
+                  "sources": [
+                    {
+                      "serviceAccountToken": {
+                        "expirationSeconds": 3607,
+                        "path": "token"
+                      }
+                    },
+                    {
+                      "configMap": {
+                        "items": [
+                          {
+                            "key": "ca.crt",
+                            "path": "ca.crt"
+                          }
+                        ],
+                        "name": "kube-root-ca.crt"
+                      }
+                    },
+                    {
+                      "downwardAPI": {
+                        "items": [
+                          {
+                            "fieldRef": {
+                              "apiVersion": "v1",
+                              "fieldPath": "metadata.namespace"
+                            },
+                            "path": "namespace"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "status": {
+            "allocatedResources": {
+              "cpu": "50m",
+              "memory": "32Mi"
+            },
+            "conditions": [
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:33Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodReadyToStartContainers"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Initialized"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:33Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "Ready"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:37:33Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "ContainersReady"
+              },
+              {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-10-05T07:34:45Z",
+                "observedGeneration": 1,
+                "status": "True",
+                "type": "PodScheduled"
+              }
+            ],
+            "containerStatuses": [
+              {
+                "allocatedResources": {
+                  "cpu": "50m",
+                  "memory": "32Mi"
+                },
+                "containerID": "containerd://57fe7d1a9d1fd8127263fc436a1d43544249bf5d42340c51330f2dfc1f4a4296",
+                "image": "docker.io/library/university:local",
+                "imageID": "sha256:4837441e01b0d68508272e346c7dddf42e8061a7692056b2274adc75ea8d6f54",
+                "lastState": {
+                  "terminated": {
+                    "containerID": "containerd://1157e85c373db80f35bb933af2c3de419500a5a8ed2b1ca16493bca12d8687f3",
+                    "exitCode": 255,
+                    "finishedAt": "2026-10-05T07:37:30Z",
+                    "reason": "Unknown",
+                    "startedAt": "2026-10-05T07:35:52Z"
+                  }
+                },
+                "name": "student",
+                "ready": true,
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "128Mi"
+                  },
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "32Mi"
+                  }
+                },
+                "restartCount": 2,
+                "started": true,
+                "state": {
+                  "running": {
+                    "startedAt": "2026-10-05T07:37:33Z"
+                  }
+                },
+                "user": {
+                  "linux": {
+                    "gid": 10001,
+                    "supplementalGroups": [
+                      10001
+                    ],
+                    "uid": 10001
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                    "name": "kube-api-access-hprdm",
+                    "readOnly": true,
+                    "recursiveReadOnly": "Disabled"
+                  }
+                ]
+              }
+            ],
+            "hostIP": "192.168.58.3",
+            "hostIPs": [
+              {
+                "ip": "192.168.58.3"
+              }
+            ],
+            "observedGeneration": 1,
+            "phase": "Running",
+            "podIP": "10.244.1.9",
+            "podIPs": [
+              {
+                "ip": "10.244.1.9"
+              }
+            ],
+            "qosClass": "Burstable",
+            "resources": {
+              "limits": {
+                "cpu": "500m",
+                "memory": "128Mi"
+              },
+              "requests": {
+                "cpu": "28m",
+                "memory": "32Mi"
+              }
+            },
+            "startTime": "2026-10-05T07:34:45Z"
+          }
+        }
+      ],
+      "kind": "List",
+      "metadata": {
+        "resourceVersion": ""
+      }
+    },
+    "interrupted_payment": {
+      "status": 503,
+      "latency_s": 0.00743364499976451,
+      "http_ok": false,
+      "sla_ok": false,
+      "degraded": false,
+      "recovered": false,
+      "data": {
+        "error": "Service Unavailable"
+      }
+    },
+    "component_detection_s": 0.007543765000264102,
+    "component_detection_source": "interrupted payment response observed",
+    "audit_after_interrupt": {
+      "balance_mismatches": 1,
+      "duplicate_keys": 0
+    },
+    "replayed_payment": {
+      "status": 201,
+      "latency_s": 0.011061634999805392,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "data": {
+        "id": 8,
+        "student_id": 6,
+        "amount": 10000
+      }
+    },
+    "recovered_transactions": 1
+  },
+  "audit": {
+    "balance_mismatches": 1,
+    "duplicate_keys": 0,
+    "unexpected_payment_rows": 1
+  },
+  "consistent": false,
+  "samples": [
+    {
+      "status": 200,
+      "latency_s": 0.0018555679998826236,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 0.0002746899999692687,
+      "end_t": 0.002144165000117937,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00519047399984629,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 0.25231060799978877,
+      "end_t": 0.2575279819998286,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002558939000209648,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 0.5076738799998566,
+      "end_t": 0.5102487409999412,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004551963000267278,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 0.7605454909999025,
+      "end_t": 0.7651166949999606,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004637708999780443,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 1.0153958539999621,
+      "end_t": 1.0200533869997344,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004717311000149493,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 1.2702453779997995,
+      "end_t": 1.2749819679997927,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0042495130001043435,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 1.5251821050001126,
+      "end_t": 1.5294534639997437,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004963157000020146,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 1.7797948719999113,
+      "end_t": 1.7847831619997123,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00453835500002242,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 2.0351464380000834,
+      "end_t": 2.0397047910000765,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005929354999807401,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 2.290026257000136,
+      "end_t": 2.295977318000041,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002674524000212841,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 2.5461002179999923,
+      "end_t": 2.5487898169999426,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0026278939999428985,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 2.7989178650000213,
+      "end_t": 2.801561598999797,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00471990599999117,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 3.051727473000028,
+      "end_t": 3.0564692180000748,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0024004319998311985,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 3.3065895519998776,
+      "end_t": 3.3090001340001436,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0021806310001011298,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 3.5591375889998744,
+      "end_t": 3.561329062999903,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003521915999954217,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 3.811585756000113,
+      "end_t": 3.815126947999943,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005539068999951269,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 4.065429800999937,
+      "end_t": 4.070992771999954,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0050189389999104606,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 4.321142078999856,
+      "end_t": 4.326171718999831,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004708297999968636,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 4.576454210000065,
+      "end_t": 4.581181958999878,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003075464000175998,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 4.831295185999807,
+      "end_t": 4.834381591999772,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005083335999643168,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 5.084522992000075,
+      "end_t": 5.0896258269999635,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.006213820999619202,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 5.339794835999783,
+      "end_t": 5.346029696999722,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0038524100000358885,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 5.596168918999865,
+      "end_t": 5.600037100999998,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004545510000298236,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 5.850310288999935,
+      "end_t": 5.854876340999908,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004780104000019492,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 6.105167477000123,
+      "end_t": 6.109967358999711,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00488272299980963,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 6.360232666999764,
+      "end_t": 6.365137260999745,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0024598479999440315,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 6.615245760000107,
+      "end_t": 6.617717247999735,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0023460779998458747,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 6.867840871999761,
+      "end_t": 6.870198929999788,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004440762000285758,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 7.120541444000082,
+      "end_t": 7.125000292000095,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004890373999842268,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 7.375271717000032,
+      "end_t": 7.380181312999866,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003655350999906659,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 7.630309458999818,
+      "end_t": 7.633980746999896,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0059364759999880334,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 7.884247410999706,
+      "end_t": 7.890204714999982,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002633479999985866,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 8.140409567000006,
+      "end_t": 8.143060418000005,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0034350529999755963,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 8.393172584999775,
+      "end_t": 8.396625500000027,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0026801280000654515,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 8.646912396000062,
+      "end_t": 8.649606414000118,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005001522999918961,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 8.899912672000028,
+      "end_t": 8.904936001999886,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005674083000030805,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 9.155246735999754,
+      "end_t": 9.160944832000041,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004400980000355048,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 9.41119664200005,
+      "end_t": 9.415620586999921,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004486876000100892,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 9.665899709999849,
+      "end_t": 9.670409704000122,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004097405999800685,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 9.920556688000033,
+      "end_t": 9.924673664999773,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005448432999855868,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 10.174953332999848,
+      "end_t": 10.180424201999813,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004501106000134314,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 10.430667230999916,
+      "end_t": 10.435188584000116,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004277768000065407,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 10.685422584999742,
+      "end_t": 10.689721676999852,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004294510000363516,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 10.940007916000013,
+      "end_t": 10.944323134000115,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005691250000381842,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 11.194505447999745,
+      "end_t": 11.200220065999929,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005180814000141254,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 11.450458978999905,
+      "end_t": 11.455663556999752,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0028039960002388398,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 11.705794174999937,
+      "end_t": 11.708614191999914,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00540680699987206,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 11.958915660999992,
+      "end_t": 11.964344253000036,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003690157000164618,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 12.21454899299988,
+      "end_t": 12.218257619999804,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004273046999969665,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 12.46841317999997,
+      "end_t": 12.472707858999911,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0035024069998144114,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 12.722847859000012,
+      "end_t": 12.726366436999797,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0046375759998227295,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 12.976545047999934,
+      "end_t": 12.981207361000088,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00530942600016715,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 13.231365240999821,
+      "end_t": 13.236696746999769,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004302656999698229,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 13.486987224000131,
+      "end_t": 13.491309016999821,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002955018999728054,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 13.741517977000058,
+      "end_t": 13.74448995900002,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003655665000223962,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 13.994670858000063,
+      "end_t": 13.99834365300012,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005088829000214901,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 14.248502083999938,
+      "end_t": 14.253612107999743,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00543743500020355,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 14.503884145000029,
+      "end_t": 14.509342878000098,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003656336999938503,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 14.759487450000051,
+      "end_t": 14.76316424300012,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002948836000086885,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 15.013386577999881,
+      "end_t": 15.016351548999864,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.001536077999844565,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 15.266486464000081,
+      "end_t": 15.268032903999938,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00515023400021164,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 15.518302631000097,
+      "end_t": 15.523475227999825,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003970413999923039,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 15.773629142000118,
+      "end_t": 15.777619183999832,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004636725999716873,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 16.027883906999705,
+      "end_t": 16.03254376699988,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005386552999880223,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 16.28289949200007,
+      "end_t": 16.288314181999795,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004635440000129165,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 16.53848619700011,
+      "end_t": 16.543143207999947,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005291785999816057,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 16.793354035999982,
+      "end_t": 16.798669404000066,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005019991000153823,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 17.048832520999895,
+      "end_t": 17.053880073000073,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004715468000085821,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 17.304192795999825,
+      "end_t": 17.308929503999934,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005909675999646424,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 17.55924815799972,
+      "end_t": 17.56518363699979,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003948200999730034,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 17.815316382999754,
+      "end_t": 17.819282091999867,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004631755999980669,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 18.069546069999888,
+      "end_t": 18.07419958699984,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0028668850000030943,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 18.32441606800012,
+      "end_t": 18.32729852600005,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004764466999858996,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 18.57755509699973,
+      "end_t": 18.582341604999783,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002274605999900814,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 18.83248229799983,
+      "end_t": 18.834772320999946,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004552311999759695,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 19.085023401999933,
+      "end_t": 19.089599113000077,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005000488999939989,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 19.339780008999696,
+      "end_t": 19.344807092999872,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003918003999842767,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 19.594979444999808,
+      "end_t": 19.598919169000055,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004196382999907655,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 19.849142794999807,
+      "end_t": 19.853361605999908,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0052092860000811925,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 20.103714838000087,
+      "end_t": 20.10894813699997,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005031271999996534,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 20.359194575999936,
+      "end_t": 20.364250413999798,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0014645040000687004,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 20.61435401300014,
+      "end_t": 20.6158274659997,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0035072499999841966,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 20.866071483999804,
+      "end_t": 20.86959643499995,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003791694000028656,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 21.119730107000123,
+      "end_t": 21.1235392829999,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004258029000084207,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 21.37376898399998,
+      "end_t": 21.378045982000003,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002463631000409805,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 21.628281826000148,
+      "end_t": 21.630756940000083,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.002866294999876118,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 21.880903386999762,
+      "end_t": 21.883784935999756,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005563596999763831,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 22.13417808999975,
+      "end_t": 22.139765607999834,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0026873639999394072,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 22.389897321999797,
+      "end_t": 22.39260301000013,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004893822999747499,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 22.642949199999748,
+      "end_t": 22.647866724999858,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005713245000151801,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 22.898054066999975,
+      "end_t": 22.903789737999887,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0028887960002066393,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 23.153916397000103,
+      "end_t": 23.15681735399994,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003980961999786814,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 23.407035347000146,
+      "end_t": 23.411035182999967,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005969576000097732,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 23.661318987999948,
+      "end_t": 23.667315459999827,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0049450749997959065,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 23.917498217999764,
+      "end_t": 23.92246639699988,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004711367999789218,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 24.17277519399977,
+      "end_t": 24.177507651999804,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004137674000048719,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 24.427737651999905,
+      "end_t": 24.431900123000105,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.006798294999953214,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 24.682079509999767,
+      "end_t": 24.688927949000117,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005556237999826408,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 24.939193882999916,
+      "end_t": 24.944774851000147,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00461088199972437,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 25.194912441999804,
+      "end_t": 25.199545573999785,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.005433875000107946,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 25.449902096999722,
+      "end_t": 25.45535825299976,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003689233999921271,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 25.70556556099973,
+      "end_t": 25.70927362600014,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.003028931999779161,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 25.95939248400009,
+      "end_t": 25.962438227999883,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0038895309999134042,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 26.212569713999983,
+      "end_t": 26.216475698000067,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004008434999832389,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 26.466632020999896,
+      "end_t": 26.47065964500007,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.0028681859998869186,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 26.720856641999944,
+      "end_t": 26.72373898900014,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004658315000142466,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 26.973899028999767,
+      "end_t": 26.978581888000008,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004698845999882906,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 27.228846861999955,
+      "end_t": 27.233567396000126,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004653466000036133,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 27.483885771000132,
+      "end_t": 27.48856357900013,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.00315996700010146,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 27.738686828000027,
+      "end_t": 27.741864731000078,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004265420999672642,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 27.992124562999834,
+      "end_t": 27.996411803999763,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.001676444000167976,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 28.246545562999927,
+      "end_t": 28.248231312999906,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004150498999933916,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 28.49843367299991,
+      "end_t": 28.502606470000046,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004411677999996755,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 28.752805227999943,
+      "end_t": 28.757237054000143,
+      "kind": "probe"
+    },
+    {
+      "status": 200,
+      "latency_s": 0.004533151000032376,
+      "http_ok": true,
+      "sla_ok": true,
+      "degraded": false,
+      "recovered": false,
+      "t": 29.00745431999985,
+      "end_t": 29.012011322000035,
+      "kind": "probe"
+    }
+  ]
+}

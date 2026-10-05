@@ -1,0 +1,3 @@
+[pod/records-894c69779-4v7pd/records] {"time":"2026-10-05T07:23:08.637863431Z","level":"INFO","msg":"service started","role":"records","fault_tolerant":false}
+[pod/records-894c69779-4v7pd/records] {"time":"2026-10-05T07:23:58.807879664Z","level":"INFO","msg":"request","role":"records","method":"POST","path":"/grades","status":200,"duration_ms":3}
+[pod/records-894c69779-4v7pd/records] {"time":"2026-10-05T07:24:50.813114449Z","level":"INFO","msg":"request","role":"records","method":"POST","path":"/grades","status":200,"duration_ms":2}

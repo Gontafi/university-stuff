@@ -1,0 +1,12 @@
+/backups/latest.dump: OK
+ balance_mismatches 
+--------------------
+                  0
+(1 row)
+
+DO
+ students | payments | grades 
+----------+----------+--------
+        6 |        7 |      6
+(1 row)
+
