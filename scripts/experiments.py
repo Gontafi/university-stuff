@@ -58,6 +58,17 @@ def fault(base, role, delay=0, failures=0):
     return must(base, "/api/faults", "POST", {"role": role, "delay_ms": delay, "failures": failures}, {"X-Fault-Token": TOKEN})
 
 
+def start_node(node):
+    # docker start gives the node a fresh /etc/hosts without the minikube names,
+    # so kubelet cannot reach control-plane.minikube.internal and the node stays NotReady
+    subprocess.run(["docker", "start", node], check=True, capture_output=True)
+    ip = subprocess.run(["minikube", "-p", PROFILE, "ip"], text=True, capture_output=True, check=True).stdout.strip()
+    host = ip.rsplit(".", 1)[0] + ".1"
+    entries = f"{host}\thost.minikube.internal\n{ip}\tcontrol-plane.minikube.internal\n"
+    subprocess.run(["docker", "exec", node, "sh", "-c", f"grep -q control-plane.minikube.internal /etc/hosts || printf '{entries}' >> /etc/hosts"],
+                   check=True, capture_output=True)
+
+
 def experiment(mode, scenario, out, base):
     for role in ("student", "payment", "records"):
         fault(base, role)
@@ -112,7 +123,7 @@ def experiment(mode, scenario, out, base):
             fault(base, "records", delay=2000)
         elif scenario == "node":
             node = PROFILE + "-m02"
-            restore_action = lambda: subprocess.run(["docker", "start", node], check=True, capture_output=True)
+            restore_action = lambda: start_node(node)
             subprocess.run(["docker", "stop", "--time=0", node], check=True, capture_output=True)
             observations["target_node"] = node
         elif scenario == "transaction":
