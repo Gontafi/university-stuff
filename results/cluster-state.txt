@@ -1,0 +1,75 @@
+# kubectl get pods,svc,endpointslices,pdb,cronjob -o wide  (2026-10-12T09:31:46Z)
+NAME                                READY   STATUS      RESTARTS   AGE     IP            NODE           NOMINATED NODE   READINESS GATES
+pod/backup-drill-1791797253-tmn6f   0/1     Completed   0          4m13s   10.244.1.8    ftr-asg3-m02   <none>           <none>
+pod/backup-drill-1791797481-mx2pn   0/1     Completed   0          25s     10.244.1.13   ftr-asg3-m02   <none>           <none>
+pod/pg-backup-29863290-2xbww        0/1     Completed   0          106s    10.244.1.10   ftr-asg3-m02   <none>           <none>
+pod/postgres-0                      1/1     Running     0          21s     10.244.0.8    ftr-asg3       <none>           <none>
+pod/registration-7f7c7d757-7b5wv    1/1     Running     0          4m48s   10.244.1.7    ftr-asg3-m02   <none>           <none>
+pod/registration-7f7c7d757-vt9q5    1/1     Running     0          4m50s   10.244.1.6    ftr-asg3-m02   <none>           <none>
+
+NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE     SELECTOR
+service/postgres            ClusterIP   10.108.137.163   <none>        5432/TCP       7m24s   app=postgres
+service/registration        ClusterIP   10.98.79.148     <none>        80/TCP         7m12s   app=registration
+service/registration-test   NodePort    10.106.30.170    <none>        80:30090/TCP   7m12s   app=registration
+
+NAME                                                     ADDRESSTYPE   PORTS   ENDPOINTS               AGE
+endpointslice.discovery.k8s.io/postgres-nf276            IPv4          5432    10.244.0.8              7m24s
+endpointslice.discovery.k8s.io/registration-bq6hb        IPv4          8080    10.244.1.6,10.244.1.7   7m12s
+endpointslice.discovery.k8s.io/registration-test-twshq   IPv4          8080    10.244.1.6,10.244.1.7   7m12s
+
+NAME                                      MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/registration   1               N/A               1                     7m12s
+
+NAME                      SCHEDULE      TIMEZONE   SUSPEND   ACTIVE   LAST SCHEDULE   AGE     CONTAINERS   IMAGES               SELECTOR
+cronjob.batch/pg-backup   */5 * * * *   <none>     False     0        106s            7m12s   backup       postgres:17-alpine   <none>
+
+# kubectl describe deployment registration
+Name:                   registration
+Namespace:              asg3
+CreationTimestamp:      Mon, 12 Oct 2026 14:24:34 +0500
+Labels:                 app=registration
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=registration
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  0 max unavailable, 1 max surge
+Pod Template:
+  Labels:       app=registration
+  Annotations:  kubectl.kubernetes.io/restartedAt: 2026-10-12T14:26:56+05:00
+  Containers:
+   registration:
+    Image:      registration:asg3
+    Port:       8080/TCP (http)
+    Host Port:  0/TCP (http)
+    Limits:
+      cpu:     500m
+      memory:  128Mi
+    Requests:
+      cpu:      100m
+      memory:   64Mi
+    Liveness:   http-get http://:http/health/live delay=0s timeout=1s period=5s successThreshold=1 failureThreshold=3
+    Readiness:  http-get http://:http/health/ready delay=0s timeout=1s period=2s successThreshold=1 failureThreshold=2
+    Startup:    http-get http://:http/health/live delay=0s timeout=1s period=1s successThreshold=1 failureThreshold=30
+    Environment:
+      DATABASE_URL:             <set to the key 'url' in secret 'registration-db'>  Optional: false
+    Mounts:                     <none>
+  Volumes:                      <none>
+  Topology Spread Constraints:  kubernetes.io/hostname:ScheduleAnyway when max skew 1 is exceeded for selector app=registration
+  Node-Selectors:               <none>
+  Tolerations:                  <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  registration-66fff6964 (0/0 replicas created)
+NewReplicaSet:   registration-7f7c7d757 (2/2 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  7m12s  deployment-controller  Scaled up replica set registration-66fff6964 from 0 to 2
+  Normal  ScalingReplicaSet  4m50s  deployment-controller  Scaled up replica set registration-7f7c7d757 from 0 to 1
+  Normal  ScalingReplicaSet  4m48s  deployment-controller  Scaled down replica set registration-66fff6964 from 2 to 1
+  Normal  ScalingReplicaSet  4m48s  deployment-controller  Scaled up replica set registration-7f7c7d757 from 1 to 2
+  Normal  ScalingReplicaSet  4m46s  deployment-controller  Scaled down replica set registration-66fff6964 from 1 to 0

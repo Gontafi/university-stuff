@@ -1,0 +1,18 @@
+{
+  "given": {
+    "lb": 0.9995,
+    "gateway": 0.999,
+    "auth": 0.999975,
+    "course": 0.999975,
+    "registration": 0.999975,
+    "db": 0.999991
+  },
+  "end_to_end": 0.9984166285041437,
+  "whatif": {
+    "second API gateway": 0.9994150451326478,
+    "second load balancer": 0.9989158368183958,
+    "third replica of each service": 0.9984911390612291,
+    "third database node": 0.9984255873771811,
+    "second gateway and second LB": 0.999914752655214
+  }
+}

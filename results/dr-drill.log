@@ -1,0 +1,11 @@
+   0.12 s  rows before backup: 2617
+   3.35 s  backup job finished: backup 20261012T093121Z done
+   3.52 s  rows in database at backup time: 2617
+   0.00 s  DISASTER: delete PostgreSQL StatefulSet and its volume
+   0.89 s  database and volume gone
+   3.94 s  empty PostgreSQL running again from k8s/postgres.yaml
+   7.12 s  restore job: registration-20261012T093121Z.dump: OK restored registration-20261012T093121Z.dump 
+   7.23 s  rows after restore: 2617 (expected 2617)
+   7.33 s  registration API answers 200 again, full recovery done
+   7.41 s  scheduled backups resumed
+   7.49 s  RESULT: data matches backup

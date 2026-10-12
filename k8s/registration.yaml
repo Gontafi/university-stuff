@@ -1,0 +1,117 @@
+# Registration Service of the synthetic AITU student services platform.
+# Synthetic configuration only: no real AITU endpoints, credentials or infrastructure.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registration
+  namespace: asg3
+  labels:
+    app: registration
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: registration
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1          # start one new pod first
+      maxUnavailable: 0    # never go below 2 ready pods during an update
+  template:
+    metadata:
+      labels:
+        app: registration
+    spec:
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 20
+      # spread the two replicas over the two nodes, but still schedule if one node is gone
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: registration
+      containers:
+        - name: registration
+          image: registration:asg3
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: registration-db
+                  key: url
+          startupProbe:
+            httpGet: {path: /health/live, port: http}
+            periodSeconds: 1
+            failureThreshold: 30
+          livenessProbe:
+            # process check only, a database outage must not restart the pods
+            httpGet: {path: /health/live, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 1
+            failureThreshold: 3
+          readinessProbe:
+            # pod gets traffic only when PostgreSQL answers within 300 ms
+            httpGet: {path: /health/ready, port: http}
+            periodSeconds: 2
+            timeoutSeconds: 1
+            failureThreshold: 2
+            successThreshold: 1
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi
+          securityContext:
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+---
+# service discovery: the API gateway calls http://registration.asg3.svc.cluster.local
+apiVersion: v1
+kind: Service
+metadata:
+  name: registration
+  namespace: asg3
+spec:
+  selector:
+    app: registration
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+# NodePort only for the test client that runs outside the cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: registration-test
+  namespace: asg3
+spec:
+  type: NodePort
+  selector:
+    app: registration
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      nodePort: 30090
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: registration
+  namespace: asg3
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: registration

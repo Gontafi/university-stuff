@@ -1,0 +1,73 @@
+# PostgreSQL for the synthetic platform. The password is a demo value, not a real credential.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: asg3
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: registration-db
+  namespace: asg3
+stringData:
+  password: synthetic-demo-only
+  url: postgres://registration:synthetic-demo-only@postgres:5432/registration?sslmode=disable
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: asg3
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: ftr-asg3
+      containers:
+        - name: postgres
+          image: postgres:17-alpine
+          env:
+            - {name: POSTGRES_USER, value: registration}
+            - {name: POSTGRES_DB, value: registration}
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef: {name: registration-db, key: password}
+            - {name: PGDATA, value: /var/lib/postgresql/data/pgdata}
+          ports:
+            - containerPort: 5432
+          readinessProbe:
+            exec:
+              command: ["pg_isready", "-U", "registration"]
+            periodSeconds: 2
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {cpu: "1", memory: 512Mi}
+          volumeMounts:
+            - {name: data, mountPath: /var/lib/postgresql/data}
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: asg3
+spec:
+  selector:
+    app: postgres
+  ports:
+    - port: 5432

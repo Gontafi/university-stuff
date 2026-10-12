@@ -1,0 +1,46 @@
+# Logical backup every 5 minutes (RPO target 5 min), stored on the worker node,
+# not on the node that runs PostgreSQL.
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: pg-backup
+  namespace: asg3
+spec:
+  schedule: "*/5 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        spec:
+          restartPolicy: OnFailure
+          nodeSelector:
+            kubernetes.io/hostname: ftr-asg3-m02
+          containers:
+            - name: backup
+              image: postgres:17-alpine
+              env:
+                - name: PGPASSWORD
+                  valueFrom:
+                    secretKeyRef: {name: registration-db, key: password}
+              command:
+                - sh
+                - -ec
+                - |
+                  ts=$(date -u +%Y%m%dT%H%M%SZ)
+                  pg_dump -h postgres -U registration -Fc -f /backups/registration-$ts.dump registration
+                  cd /backups
+                  sha256sum registration-$ts.dump > registration-$ts.dump.sha256
+                  ln -sf registration-$ts.dump latest.dump
+                  ln -sf registration-$ts.dump.sha256 latest.sha256
+                  ls -1t registration-*.dump | tail -n +13 | while read f; do rm -f "$f" "$f.sha256"; done
+                  echo "backup $ts done"
+              volumeMounts:
+                - {name: backups, mountPath: /backups}
+          volumes:
+            - name: backups
+              hostPath:
+                path: /data/asg3-backups
+                type: DirectoryOrCreate

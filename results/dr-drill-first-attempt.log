@@ -1,0 +1,6 @@
+   0.13 s  rows before backup: 2617
+   3.38 s  backup job finished: backup 20261012T092733Z done
+   3.49 s  rows in database at backup time: 2617
+   0.00 s  DISASTER: delete PostgreSQL StatefulSet and its volume
+   1.17 s  database and volume gone
+   4.20 s  empty PostgreSQL running again from k8s/postgres.yaml

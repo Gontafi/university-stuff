@@ -1,0 +1,3 @@
+registration-20261012T092733Z.dump: OK
+pg_restore: error: connection to server at "postgres" (10.108.137.163), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?

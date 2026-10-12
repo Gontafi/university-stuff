@@ -1,0 +1,21 @@
+total 52
+lrwxrwxrwx    1 root     root            34 Oct 12 09:30 latest.dump -> registration-20261012T093000Z.dump
+lrwxrwxrwx    1 root     root            41 Oct 12 09:30 latest.sha256 -> registration-20261012T093000Z.dump.sha256
+-rw-r--r--    1 root     root          3647 Oct 12 09:25 registration-20261012T092510Z.dump
+-rw-r--r--    1 root     root           101 Oct 12 09:25 registration-20261012T092510Z.dump.sha256
+-rw-r--r--    1 root     root         29789 Oct 12 09:27 registration-20261012T092733Z.dump
+-rw-r--r--    1 root     root           101 Oct 12 09:27 registration-20261012T092733Z.dump.sha256
+-rw-r--r--    1 root     root           861 Oct 12 09:30 registration-20261012T093000Z.dump
+-rw-r--r--    1 root     root           101 Oct 12 09:30 registration-20261012T093000Z.dump.sha256
+All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
+If you don't see a command prompt, try pressing enter.
+warning: couldn't attach to pod/ls-backups, falling back to streaming logs: unable to upgrade connection: container ls-backups not found in pod ls-backups_asg3
+total 52
+lrwxrwxrwx    1 root     root            34 Oct 12 09:30 latest.dump -> registration-20261012T093000Z.dump
+lrwxrwxrwx    1 root     root            41 Oct 12 09:30 latest.sha256 -> registration-20261012T093000Z.dump.sha256
+-rw-r--r--    1 root     root          3647 Oct 12 09:25 registration-20261012T092510Z.dump
+-rw-r--r--    1 root     root           101 Oct 12 09:25 registration-20261012T092510Z.dump.sha256
+-rw-r--r--    1 root     root         29789 Oct 12 09:27 registration-20261012T092733Z.dump
+-rw-r--r--    1 root     root           101 Oct 12 09:27 registration-20261012T092733Z.dump.sha256
+-rw-r--r--    1 root     root           861 Oct 12 09:30 registration-20261012T093000Z.dump
+-rw-r--r--    1 root     root           101 Oct 12 09:30 registration-20261012T093000Z.dump.sha256

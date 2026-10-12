@@ -1,0 +1,23 @@
+lb             0.99950000
+gateway        0.99900000
+auth           0.99997500
+course         0.99997500
+registration   0.99997500
+db             0.99999100
+end-to-end     0.99841663  target 0.999  met=False
+downtime per year: 13.87 h (target allows 8.76 h)
+
+unavailability share per block (1 - A) / sum:
+  gateway        0.10000%  share  63.1%
+  lb             0.05000%  share  31.6%
+  auth           0.00250%  share   1.6%
+  course         0.00250%  share   1.6%
+  registration   0.00250%  share   1.6%
+  db             0.00090%  share   0.6%
+
+what-if, one change at a time:
+  second API gateway               0.99941505  gain +0.09984 pp  met=True
+  second load balancer             0.99891584  gain +0.04992 pp  met=False
+  third replica of each service    0.99849114  gain +0.00745 pp  met=False
+  third database node              0.99842559  gain +0.00090 pp  met=False
+  second gateway and second LB     0.99991475  gain +0.14981 pp  met=True

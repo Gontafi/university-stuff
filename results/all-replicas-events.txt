@@ -1,0 +1,53 @@
+LAST SEEN   TYPE      REASON                  OBJECT                                  MESSAGE
+101s        Warning   FailedScheduling        pod/postgres-0                          0/2 nodes are available: pod has unbound immediate PersistentVolumeClaims. not found
+101s        Normal    Provisioning            persistentvolumeclaim/data-postgres-0   External provisioner is provisioning volume for claim "asg3/data-postgres-0"
+101s        Normal    ProvisioningSucceeded   persistentvolumeclaim/data-postgres-0   Successfully provisioned volume pvc-4c6e8b55-4f22-4dd4-9fc6-35e2efaf19e6
+101s        Normal    ExternalProvisioning    persistentvolumeclaim/data-postgres-0   Waiting for a volume to be created either by the external provisioner 'k8s.io/minikube-hostpath' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+101s        Normal    SuccessfulCreate        statefulset/postgres                    Create Pod postgres-0 in StatefulSet postgres successful
+101s        Normal    SuccessfulCreate        statefulset/postgres                    Create Claim data-postgres-0 Pod postgres-0 in StatefulSet postgres success
+101s        Normal    Pulling                 pod/postgres-0                          Pulling image "postgres:17-alpine"
+101s        Normal    Scheduled               pod/postgres-0                          Successfully assigned asg3/postgres-0 to ftr-asg3
+90s         Warning   Unhealthy               pod/postgres-0                          Readiness probe failed: /var/run/postgresql:5432 - no response
+90s         Normal    Started                 pod/postgres-0                          Container started
+90s         Normal    Created                 pod/postgres-0                          Container created
+90s         Normal    Pulled                  pod/postgres-0                          Successfully pulled image "postgres:17-alpine" in 10.531s (10.531s including waiting). Image size: 117212703 bytes.
+89s         Normal    Scheduled               pod/registration-66fff6964-j5td2        Successfully assigned asg3/registration-66fff6964-j5td2 to ftr-asg3-m02
+89s         Normal    Pulled                  pod/registration-66fff6964-kkkcc        Container image "registration:asg3" already present on machine and can be accessed by the pod
+89s         Normal    ScalingReplicaSet       deployment/registration                 Scaled up replica set registration-66fff6964 from 0 to 2
+89s         Normal    SuccessfulCreate        replicaset/registration-66fff6964       Created pod: registration-66fff6964-kkkcc
+89s         Normal    Pulled                  pod/registration-66fff6964-j5td2        Container image "registration:asg3" already present on machine and can be accessed by the pod
+89s         Normal    SuccessfulCreate        replicaset/registration-66fff6964       Created pod: registration-66fff6964-j5td2
+89s         Normal    Scheduled               pod/registration-66fff6964-kkkcc        Successfully assigned asg3/registration-66fff6964-kkkcc to ftr-asg3
+88s         Normal    Started                 pod/registration-66fff6964-j5td2        Container started
+88s         Normal    Created                 pod/registration-66fff6964-kkkcc        Container created
+88s         Normal    Started                 pod/registration-66fff6964-kkkcc        Container started
+88s         Normal    Created                 pod/registration-66fff6964-j5td2        Container created
+63s         Normal    Pulling                 pod/pg-backup-29863285-2qzzd            Pulling image "postgres:17-alpine"
+63s         Normal    SuccessfulCreate        job/pg-backup-29863285                  Created pod: pg-backup-29863285-2qzzd
+63s         Normal    Scheduled               pod/pg-backup-29863285-2qzzd            Successfully assigned asg3/pg-backup-29863285-2qzzd to ftr-asg3-m02
+63s         Normal    SuccessfulCreate        cronjob/pg-backup                       Created job pg-backup-29863285
+54s         Normal    Pulled                  pod/pg-backup-29863285-2qzzd            Successfully pulled image "postgres:17-alpine" in 9.344s (9.344s including waiting). Image size: 117212703 bytes.
+54s         Normal    Created                 pod/pg-backup-29863285-2qzzd            Container created
+53s         Normal    Started                 pod/pg-backup-29863285-2qzzd            Container started
+51s         Normal    SawCompletedJob         cronjob/pg-backup                       Saw completed job: pg-backup-29863285, condition: Complete
+51s         Normal    Completed               job/pg-backup-29863285                  Job completed
+37s         Normal    Killing                 pod/registration-66fff6964-j5td2        Stopping container registration
+37s         Normal    Scheduled               pod/registration-66fff6964-9w4nb        Successfully assigned asg3/registration-66fff6964-9w4nb to ftr-asg3-m02
+37s         Normal    SuccessfulCreate        replicaset/registration-66fff6964       Created pod: registration-66fff6964-9w4nb
+36s         Normal    Started                 pod/registration-66fff6964-9w4nb        Container started
+36s         Normal    Created                 pod/registration-66fff6964-9w4nb        Container created
+36s         Normal    Pulled                  pod/registration-66fff6964-9w4nb        Container image "registration:asg3" already present on machine and can be accessed by the pod
+14s         Normal    Killing                 pod/registration-66fff6964-9w4nb        Stopping container registration
+13s         Normal    Pulled                  pod/registration-66fff6964-r5gvv        Container image "registration:asg3" already present on machine and can be accessed by the pod
+13s         Normal    Created                 pod/registration-66fff6964-r5gvv        Container created
+13s         Normal    Started                 pod/registration-66fff6964-r5gvv        Container started
+13s         Normal    Scheduled               pod/registration-66fff6964-wvqbt        Successfully assigned asg3/registration-66fff6964-wvqbt to ftr-asg3-m02
+13s         Normal    Pulled                  pod/registration-66fff6964-wvqbt        Container image "registration:asg3" already present on machine and can be accessed by the pod
+13s         Normal    Created                 pod/registration-66fff6964-wvqbt        Container created
+13s         Normal    Started                 pod/registration-66fff6964-wvqbt        Container started
+13s         Normal    Scheduled               pod/registration-66fff6964-r5gvv        Successfully assigned asg3/registration-66fff6964-r5gvv to ftr-asg3
+13s         Warning   Unhealthy               pod/registration-66fff6964-kkkcc        Readiness probe failed: HTTP probe failed with statuscode: 503
+13s         Normal    Killing                 pod/registration-66fff6964-kkkcc        Stopping container registration
+13s         Normal    SuccessfulCreate        replicaset/registration-66fff6964       Created pod: registration-66fff6964-wvqbt
+13s         Normal    SuccessfulCreate        replicaset/registration-66fff6964       Created pod: registration-66fff6964-r5gvv
+13s         Warning   Unhealthy               pod/registration-66fff6964-9w4nb        Readiness probe failed: HTTP probe failed with statuscode: 503
