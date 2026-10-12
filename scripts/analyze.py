@@ -22,7 +22,7 @@ STAGES = {
     "09:12": ("Recovery attack", "attempt to delete backups so the victim cannot restore"),
     "09:13": ("Exfiltration", "new outbound connection to an unknown address from a server that should not browse"),
     "09:15": ("Exfiltration", "database read spike two minutes after the outbound channel opened"),
-    "09:18": ("Persistence", "antivirus disabled to keep access and hide further tools; needs admin rights"),
+    "09:18": ("Persistence", "antivirus disabled to keep access and hide further tools, which needs admin rights"),
 }
 EVENT_RISK = {"09:01": "Medium", "09:03": "High", "09:04": "Critical", "09:07": "Critical", "09:08": "High",
               "09:10": "Critical", "09:12": "Critical", "09:13": "High", "09:15": "High", "09:18": "Critical"}
@@ -30,9 +30,9 @@ EVENT_RISK = {"09:01": "Medium", "09:03": "High", "09:04": "Critical", "09:07": 
 # likelihood and impact on a 1..5 scale
 THREATS = [
     ("Credential compromise", 5, 4, "observed: 36 guesses were enough, no lockout or MFA stopped it"),
-    ("Ransomware", 4, 5, "observed: 1,200 files encrypted; impact is loss of research data"),
-    ("Backup destruction", 3, 5, "attempted at 09:12; success unknown; without backups nothing can be restored"),
-    ("Data exfiltration", 3, 4, "outbound link and DB spike, volume not confirmed; research and personal data"),
+    ("Ransomware", 4, 5, "observed: 1,200 files encrypted, and the impact is loss of research data"),
+    ("Backup destruction", 3, 5, "attempted at 09:12 with unknown success, and without backups nothing can be restored"),
+    ("Data exfiltration", 3, 4, "outbound link and DB spike, volume not confirmed, research and personal data at risk"),
     ("Privilege escalation", 4, 4, "disabling antivirus needs admin rights, so escalation most likely happened"),
 ]
 

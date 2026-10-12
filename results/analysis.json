@@ -87,7 +87,7 @@
       "source": "Research-Server-01",
       "severity": "Critical",
       "stage": "Persistence",
-      "evidence": "antivirus disabled to keep access and hide further tools; needs admin rights",
+      "evidence": "antivirus disabled to keep access and hide further tools, which needs admin rights",
       "risk": "Critical"
     }
   ],
@@ -105,7 +105,7 @@
       "impact": 5,
       "score": 20,
       "level": "Critical",
-      "why": "observed: 1,200 files encrypted; impact is loss of research data",
+      "why": "observed: 1,200 files encrypted, and the impact is loss of research data",
       "priority": 1
     },
     {
@@ -132,7 +132,7 @@
       "impact": 5,
       "score": 15,
       "level": "High",
-      "why": "attempted at 09:12; success unknown; without backups nothing can be restored",
+      "why": "attempted at 09:12 with unknown success, and without backups nothing can be restored",
       "priority": 4
     },
     {
@@ -141,7 +141,7 @@
       "impact": 4,
       "score": 12,
       "level": "High",
-      "why": "outbound link and DB spike, volume not confirmed; research and personal data",
+      "why": "outbound link and DB spike, volume not confirmed, research and personal data at risk",
       "priority": 5
     }
   ],
