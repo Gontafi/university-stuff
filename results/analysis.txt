@@ -1,0 +1,33 @@
+Incident classification
+  09:01  Reconnaissance         Medium   15 failed logins
+  09:03  Credential attack      High     21 failed logins
+  09:04  Privilege compromise   Critical Successful login
+  09:07  Lateral movement       Critical 320 files modified
+  09:08  Data destruction       High     CPU usage increased to 95%
+  09:10  Data destruction       Critical 1,200 files encrypted
+  09:12  Recovery attack        Critical Backup deletion attempt
+  09:13  Exfiltration           High     Outbound connection to unknown IP
+  09:15  Exfiltration           High     Database access spike
+  09:18  Persistence            Critical Antivirus disabled
+
+Timeline
+  attack_duration_min: 17
+  first_failed_login_to_compromise_min: 3
+  compromise_to_encryption_min: 6
+  first_file_change_to_backup_attack_min: 5
+  failed_logins_total: 36
+
+Risk matrix (Risk = Likelihood x Impact)
+  1. Ransomware             L=4 I=5 R=20 Critical
+  2. Credential compromise  L=5 I=4 R=20 Critical
+  3. Privilege escalation   L=4 I=4 R=16 High
+  4. Backup destruction     L=3 I=5 R=15 High
+  5. Data exfiltration      L=3 I=4 R=12 High
+
+AI detection, threshold 0.75
+  Login failures       0.10 -> 0.81  margin +0.06  x8.1  anomaly=True
+  File modifications   0.12 -> 0.96  margin +0.21  x8.0  anomaly=True
+  CPU usage            0.20 -> 0.88  margin +0.13  x4.4  anomaly=True
+  Outbound traffic     0.15 -> 0.79  margin +0.04  x5.3  anomaly=True
+  Database requests    0.18 -> 0.91  margin +0.16  x5.1  anomaly=True
+  detected 5 of 5 = 100.0%, highest: File modifications, closest to threshold: Outbound traffic

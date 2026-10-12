@@ -1,0 +1,14 @@
+08:55  research server holds 1200 synthetic data files
+09:00  immutable snapshot snap-0900 taken (every 5 min)
+09:05  immutable snapshot snap-0905 taken
+09:06  researcher edits 10 files after the last snapshot (this work is at risk)
+09:07  320 files modified in one minute, rule threshold 100: alert=True
+09:10  1200 files overwritten with XOR (simulated encryption)
+09:12  backup deletion attempt refused: snapshot snap-0900 is locked until retention ends
+09:12  backup deletion attempt refused: snapshot snap-0905 is locked until retention ends
+09:18  recovery from snap-0905: 1200 of 1200 files match SHA-256
+09:18  researcher edits lost (made after the snapshot): 10 files
+drill  isolate: 0.0 ms
+drill  preserve_evidence: 8.9 ms
+drill  restore: 27.0 ms
+drill  verify: 7.4 ms

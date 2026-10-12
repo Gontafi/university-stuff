@@ -1,0 +1,203 @@
+{
+  "events": [
+    {
+      "time": "09:01",
+      "event": "15 failed logins",
+      "source": "10.20.4.15",
+      "severity": "Medium",
+      "stage": "Reconnaissance",
+      "evidence": "first burst of failed logins from one internal host, probing which accounts exist",
+      "risk": "Medium"
+    },
+    {
+      "time": "09:03",
+      "event": "21 failed logins",
+      "source": "10.20.4.15",
+      "severity": "High",
+      "stage": "Credential attack",
+      "evidence": "21 more failures in 2 minutes from the same host, brute force against one account",
+      "risk": "High"
+    },
+    {
+      "time": "09:04",
+      "event": "Successful login",
+      "source": "10.20.4.15",
+      "severity": "High",
+      "stage": "Privilege compromise",
+      "evidence": "success right after 36 failures from the same IP, the password was guessed",
+      "risk": "Critical"
+    },
+    {
+      "time": "09:07",
+      "event": "320 files modified",
+      "source": "10.20.4.15",
+      "severity": "Critical",
+      "stage": "Lateral movement",
+      "evidence": "the workstation 10.20.4.15 now changes files on the research server",
+      "risk": "Critical"
+    },
+    {
+      "time": "09:08",
+      "event": "CPU usage increased to 95%",
+      "source": "Research-Server-01",
+      "severity": "High",
+      "stage": "Data destruction",
+      "evidence": "CPU 95% one minute after mass changes, encryption process running",
+      "risk": "High"
+    },
+    {
+      "time": "09:10",
+      "event": "1,200 files encrypted",
+      "source": "Research-Server-01",
+      "severity": "Critical",
+      "stage": "Data destruction",
+      "evidence": "1,200 files encrypted, research data unusable",
+      "risk": "Critical"
+    },
+    {
+      "time": "09:12",
+      "event": "Backup deletion attempt",
+      "source": "Research-Server-01",
+      "severity": "Critical",
+      "stage": "Recovery attack",
+      "evidence": "attempt to delete backups so the victim cannot restore",
+      "risk": "Critical"
+    },
+    {
+      "time": "09:13",
+      "event": "Outbound connection to unknown IP",
+      "source": "Research-Server-01",
+      "severity": "High",
+      "stage": "Exfiltration",
+      "evidence": "new outbound connection to an unknown address from a server that should not browse",
+      "risk": "High"
+    },
+    {
+      "time": "09:15",
+      "event": "Database access spike",
+      "source": "Research-Server-01",
+      "severity": "High",
+      "stage": "Exfiltration",
+      "evidence": "database read spike two minutes after the outbound channel opened",
+      "risk": "High"
+    },
+    {
+      "time": "09:18",
+      "event": "Antivirus disabled",
+      "source": "Research-Server-01",
+      "severity": "Critical",
+      "stage": "Persistence",
+      "evidence": "antivirus disabled to keep access and hide further tools; needs admin rights",
+      "risk": "Critical"
+    }
+  ],
+  "timeline": {
+    "attack_duration_min": 17,
+    "first_failed_login_to_compromise_min": 3,
+    "compromise_to_encryption_min": 6,
+    "first_file_change_to_backup_attack_min": 5,
+    "failed_logins_total": 36
+  },
+  "risks": [
+    {
+      "threat": "Ransomware",
+      "likelihood": 4,
+      "impact": 5,
+      "score": 20,
+      "level": "Critical",
+      "why": "observed: 1,200 files encrypted; impact is loss of research data",
+      "priority": 1
+    },
+    {
+      "threat": "Credential compromise",
+      "likelihood": 5,
+      "impact": 4,
+      "score": 20,
+      "level": "Critical",
+      "why": "observed: 36 guesses were enough, no lockout or MFA stopped it",
+      "priority": 2
+    },
+    {
+      "threat": "Privilege escalation",
+      "likelihood": 4,
+      "impact": 4,
+      "score": 16,
+      "level": "High",
+      "why": "disabling antivirus needs admin rights, so escalation most likely happened",
+      "priority": 3
+    },
+    {
+      "threat": "Backup destruction",
+      "likelihood": 3,
+      "impact": 5,
+      "score": 15,
+      "level": "High",
+      "why": "attempted at 09:12; success unknown; without backups nothing can be restored",
+      "priority": 4
+    },
+    {
+      "threat": "Data exfiltration",
+      "likelihood": 3,
+      "impact": 4,
+      "score": 12,
+      "level": "High",
+      "why": "outbound link and DB spike, volume not confirmed; research and personal data",
+      "priority": 5
+    }
+  ],
+  "ai": {
+    "threshold": 0.75,
+    "detected": 5,
+    "total": 5,
+    "rate_pct": 100.0,
+    "highest": "File modifications",
+    "lowest_margin": "Outbound traffic",
+    "items": [
+      {
+        "event": "Login failures",
+        "normal": 0.1,
+        "observed": 0.81,
+        "anomaly": true,
+        "margin": 0.06,
+        "increase": 0.71,
+        "ratio": 8.1
+      },
+      {
+        "event": "File modifications",
+        "normal": 0.12,
+        "observed": 0.96,
+        "anomaly": true,
+        "margin": 0.21,
+        "increase": 0.84,
+        "ratio": 8.0
+      },
+      {
+        "event": "CPU usage",
+        "normal": 0.2,
+        "observed": 0.88,
+        "anomaly": true,
+        "margin": 0.13,
+        "increase": 0.68,
+        "ratio": 4.4
+      },
+      {
+        "event": "Outbound traffic",
+        "normal": 0.15,
+        "observed": 0.79,
+        "anomaly": true,
+        "margin": 0.04,
+        "increase": 0.64,
+        "ratio": 5.3
+      },
+      {
+        "event": "Database requests",
+        "normal": 0.18,
+        "observed": 0.91,
+        "anomaly": true,
+        "margin": 0.16,
+        "increase": 0.73,
+        "ratio": 5.1
+      }
+    ]
+  }
+}

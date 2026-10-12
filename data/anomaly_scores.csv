@@ -1,0 +1,6 @@
+event,normal_score,observed_score
+Login failures,0.10,0.81
+File modifications,0.12,0.96
+CPU usage,0.20,0.88
+Outbound traffic,0.15,0.79
+Database requests,0.18,0.91

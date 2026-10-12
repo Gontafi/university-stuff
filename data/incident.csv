@@ -1,0 +1,11 @@
+time,event,source,severity
+09:01,15 failed logins,10.20.4.15,Medium
+09:03,21 failed logins,10.20.4.15,High
+09:04,Successful login,10.20.4.15,High
+09:07,320 files modified,10.20.4.15,Critical
+09:08,CPU usage increased to 95%,Research-Server-01,High
+09:10,"1,200 files encrypted",Research-Server-01,Critical
+09:12,Backup deletion attempt,Research-Server-01,Critical
+09:13,Outbound connection to unknown IP,Research-Server-01,High
+09:15,Database access spike,Research-Server-01,High
+09:18,Antivirus disabled,Research-Server-01,Critical

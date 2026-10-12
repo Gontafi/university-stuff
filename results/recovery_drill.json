@@ -1,0 +1,17 @@
+{
+  "detected_at": "09:07",
+  "snapshots_left": 2,
+  "files": 1200,
+  "restored_ok": 1200,
+  "restored_bad": 0,
+  "snapshot_used": "snap-0905",
+  "rpo_min": 2,
+  "lost_legit_edits": 10,
+  "steps_ms": {
+    "isolate": 0.0,
+    "preserve_evidence": 8.9,
+    "restore": 27.0,
+    "verify": 7.4
+  },
+  "data_mb": 1.09
+}
